@@ -1,0 +1,25 @@
+.container {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: var(--text-color-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.container a {
+  display: flex;
+  align-items: center;
+  color: var(--bg-color-primary);
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 1s ease;
+}
+.container span {
+    margin-left: 5px;
+}
+.container a:hover {
+  color: var(--text-color-secondary);
+  background-color: var(--text-color-primary);
+}

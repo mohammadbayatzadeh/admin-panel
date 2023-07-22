@@ -1,0 +1,46 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 10px;
+  transition: all 0.5s ease;
+}
+.item a {
+  padding-left: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.item .topTitle {
+  display: flex;
+  align-items: center;
+}
+.topTitle span {
+  margin-left: 5px;
+}
+.subTitle {
+  width: 100%;
+  padding: 5px 0;
+  margin: 2px 0;
+  font-size: 0.8em;
+}
+
+.subList {
+  padding-left: 20px;
+  transform: translateY(100px);
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.subList.active {
+  display: flex;
+  transform: translateY(0px);
+}
+
+.item a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.item a:hover {
+  background-color: var(--bg-color-secondary);
+}
