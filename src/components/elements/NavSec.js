@@ -19,7 +19,7 @@ function NavSec() {
         />
         <AsideItem
           title="Page layout"
-          list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTl"]}
+          list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTL"]}
           icon={<VscLayoutSidebarRightOff />}
         />
         <AsideItem title="Navigation" icon={<VscMenu />} />

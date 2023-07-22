@@ -3,43 +3,66 @@
   flex-direction: column;
   text-align: left;
   margin-top: 10px;
-  transition: all 0.5s ease;
 }
 .item a {
-  padding-left: 5px;
+  padding: 0 5px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 .item .topTitle {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  z-index: 1;
+
 }
-.topTitle span {
+.topTitle .title {
   margin-left: 5px;
+  margin-right: auto;
 }
+.topTitle .animation {
+  transform: rotate(-50deg);
+  animation: iconAnime 1s ease infinite;
+}
+@keyframes iconAnime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .subTitle {
   width: 100%;
   padding: 5px 0;
-  margin: 2px 0;
+  margin: 5px 0;
   font-size: 0.8em;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.5s ease;
+}
+.subTitle.active {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .subList {
   padding-left: 20px;
-  transform: translateY(100px);
-  display: none;
-  transition: all 0.5s ease;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.1s ease;
+
 }
 
 .subList.active {
   display: flex;
-  transform: translateY(0px);
+  position: relative;
+  visibility: visible;
 }
 
 .item a {
   color: var(--text-color-primary);
   text-decoration: none;
-  transition: all 0.5s ease;
 }
 .item a:hover {
   background-color: var(--bg-color-secondary);

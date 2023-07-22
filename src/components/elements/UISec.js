@@ -1,10 +1,9 @@
 import styles from "./Sec.module.css";
 import AsideItem from "./AsideItem";
 import {
-  VscHome,
-  VscLayoutSidebarRightOff,
-  VscMenu,
-  VscEditorLayout,
+  VscTerminalDebian,
+  VscMultipleWindows,
+  VscLoading,
 } from "react-icons/vsc";
 
 function UISec() {
@@ -14,19 +13,15 @@ function UISec() {
       <ul>
         <AsideItem
           title="Basic Components"
-          list={["Alerrt", "Button", "Accordion"]}
-          icon={<VscHome />}
+          list={["Alert", "Button", "Accordion"]}
+          icon={<VscMultipleWindows />}
         />
+
+        <AsideItem title="Animations" icon={<VscTerminalDebian />} />
         <AsideItem
-          title="Page layout"
-          list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTl"]}
-          icon={<VscLayoutSidebarRightOff />}
-        />
-        <AsideItem title="Navigation" icon={<VscMenu />} />
-        <AsideItem
-          title="Widget"
-          icon={<VscEditorLayout />}
-          list={["Static", "Data", "Chart Widget"]}
+          title="Icons"
+          icon={<VscLoading />}
+          list={["Font Awesome", "Themify", "Material Design", "Flags"]}
         />
       </ul>
     </div>
