@@ -1,13 +1,12 @@
 import styles from "./Tag.module.css";
 import { VscWatch } from "react-icons/vsc";
-import * as V from "victory";
 import { VictoryBar } from "victory";
 
 function Tag({ number, title }) {
   const data = [
-    { quarter: 'Jan', earnings: Math.random() * 1000 },
-    { quarter: 'Feb', earnings: Math.random() * 1000 },
-    { quarter: 'Mar', earnings: Math.random() * 1000 },
+    { quarter: "Jan", earnings: Math.random() * 1000 },
+    { quarter: "Feb", earnings: Math.random() * 1000 },
+    { quarter: "Mar", earnings: Math.random() * 1000 },
     { quarter: "Apr", earnings: Math.random() * 1000 },
     { quarter: "Jun", earnings: Math.random() * 1000 },
   ];

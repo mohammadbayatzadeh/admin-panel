@@ -48,6 +48,6 @@
 }
 @media (max-width: 500px) {
   .container {
-    width: 95%;
+    width: 100%;
   }
 }
