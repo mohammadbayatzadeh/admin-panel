@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: flex;
+  height: max-content;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.analytic {
+  width: 70%;
+  /* height: 700px; */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--text-color-secondary);
+  color: var(--text-color-primary);
+  padding: 15px 15px 50px 15px;
+}
+.title {
+    font-weight: 700;
+}
