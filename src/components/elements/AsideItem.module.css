@@ -19,6 +19,7 @@
   margin-left: 5px;
   margin-right: auto;
 }
+
 .topTitle .animation {
   transform: rotate(-50deg);
   animation: iconAnime 1s ease infinite;

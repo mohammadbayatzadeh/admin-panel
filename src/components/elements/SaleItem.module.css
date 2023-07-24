@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template: 1fr/ 0.5fr 3fr 2fr 2fr 2fr 2fr;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  transition: all .5s ease;
+  border-radius: 10px;
+}
+.container:hover {
+  background-color: var(--bg-color-secondary);
+  /* background-color: red; */
+}
+.first {
+  margin-left: 10px;
+  justify-self: flex-start;
+}
+.container input {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+.sub {
+  font-size: 0.8em;
+}
+
+.top {
+  font-weight: 600;
+}

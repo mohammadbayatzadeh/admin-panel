@@ -4,11 +4,11 @@ import { VictoryBar } from "victory";
 
 function Tag({ number, title }) {
   const data = [
-    { quarter: "Jan", earnings: Math.random() * 1000 },
-    { quarter: "Feb", earnings: Math.random() * 1000 },
-    { quarter: "Mar", earnings: Math.random() * 1000 },
-    { quarter: "Apr", earnings: Math.random() * 1000 },
-    { quarter: "Jun", earnings: Math.random() * 1000 },
+    { quarter: "Jan", earnings: Math.random() * 1000 + 100 },
+    { quarter: "Feb", earnings: Math.random() * 1000 + 100 },
+    { quarter: "Mar", earnings: Math.random() * 1000 + 100 },
+    { quarter: "Apr", earnings: Math.random() * 1000 + 100 },
+    { quarter: "Jun", earnings: Math.random() * 1000 + 100 },
   ];
   return (
     <div className={styles.container}>
@@ -25,7 +25,7 @@ function Tag({ number, title }) {
             y="earnings"
             style={{
               data: {
-                fill: "#fff",
+                fill: "#494953",
               },
             }}
           />

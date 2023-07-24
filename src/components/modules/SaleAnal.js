@@ -9,16 +9,16 @@ function SaleAnal() {
       <div className={styles.analytic}>
         <p className={styles.title}>Sales Analytics</p>
         <p className={styles.subTitle}>
-          For more details about usage, please refer amCharts licences.
+          For more details about usage, please refer <a href="/#">amCharts </a>{" "}
+          licences.
         </p>
-        {/* <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div> */}
         <LineChart />
       </div>
       <div className={styles.cirChart}>
         <p>Project Risk</p>
         <p>Balance</p>
         <CircleChart />
-        <a>Change your risk</a>
+        <a href="/#">Change your risk</a>
         <span className={styles.line}></span>
         <div className={styles.row}>
           <div style={{ width: "50%", padding: "10px", textAlign: "center" }}>

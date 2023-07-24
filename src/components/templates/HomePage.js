@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HomePage.module.css";
 import Tag from "../elements/Tag";
 import SaleAnal from "../modules/SaleAnal";
+import AppSales from "../modules/AppSales";
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
         <Tag number={500} title="Downloads" />
       </div>
       <SaleAnal />
+      <AppSales />
     </div>
   );
 }

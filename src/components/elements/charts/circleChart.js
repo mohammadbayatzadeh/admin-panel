@@ -31,12 +31,12 @@ function CircleChart() {
     });
 
     series.data.setAll([
-      { value: 5 },
-      { value: 6 },
-      { value: 5 },
-      { value: 4 },
-      { value: 3 },
-      { value: 1 },
+      { value: Math.floor(Math.random() * 10 + 5) },
+      { value: Math.floor(Math.random() * 10 + 5) },
+      { value: Math.floor(Math.random() * 10 + 5) },
+      { value: Math.floor(Math.random() * 10 + 5) },
+      { value: Math.floor(Math.random() * 10 + 5) },
+      { value: Math.floor(Math.random() * 10 + 5) },
     ]);
 
     let legend = chart.children.push(

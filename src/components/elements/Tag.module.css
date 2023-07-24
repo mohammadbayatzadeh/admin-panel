@@ -3,9 +3,13 @@
   margin-bottom: 20px;
   height: 120px;
   border-radius: 10px;
-  background-color: var(--bg-color-primary);
-  color: var(--text-color-secondary);
+  color: var(--text-color-primary);
+  background-color: var(--text-color-secondary);
   padding: 15px;
+  transition: all 0.5s ease;
+}
+.container:hover {
+  transform: scale(1.05);
 }
 .container .number {
   font-size: 1.3em;
@@ -23,7 +27,7 @@
   display: flex;
   width: 100%;
   height: 1px;
-  background-color: var(--text-color-secondary);
+  background-color: var(--text-color-primary);
   margin: 10px 0;
 }
 .container .title {
@@ -36,6 +40,7 @@
 @media (max-width: 950px) {
   .container {
     width: 24%;
+    z-index: -1;
   }
   .container .title {
     font-size: 0.8em;
@@ -44,10 +49,12 @@
 @media (max-width: 784px) {
   .container {
     width: 48%;
+    z-index: -1;
   }
 }
 @media (max-width: 500px) {
   .container {
     width: 100%;
+    z-index: -1;
   }
 }
