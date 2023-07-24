@@ -11,15 +11,17 @@ function Layout({ children }) {
   return (
     <div className={styles.main_container}>
       <header className={styles.header}>
-        <a href="/">Admin Panel</a>
-        <div className={styles.userProfile}>
+        <a href="/ " className={styles.logo}>
+          Admin Panel
+        </a>
+        <a className={styles.userProfile} href="/me">
           <img
             src={require(`../../data/users/${Math.floor(
               Math.random() * 10 + 1
             )}.jpg`)}
             alt={"profile"}
           />
-        </div>
+        </a>
         <div className={styles.userProfile}>
           <p className={styles.counter}>{Math.floor(Math.random() * 10)}</p>
           <VscBellDot />

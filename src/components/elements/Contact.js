@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Contact.module.css";
+import WordChart from "./charts/WordChart";
 
 function Contact() {
   return (
@@ -34,6 +35,7 @@ function Contact() {
             <p>+989368376614</p>
           </div>
         </div>
+        <WordChart />
       </div>
     </div>
   );

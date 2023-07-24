@@ -13,13 +13,14 @@
   background-color: var(--bg-color-primary);
   padding: 0 10px;
 }
-.header a {
+.logo {
   text-decoration: none;
   font-size: 1.8em;
   color: var(--text-color-secondary);
   margin: 10px 5px 20px;
   margin-right: auto;
 }
+
 .header .userProfile {
   display: flex;
   justify-content: center;
@@ -192,6 +193,5 @@
   .container input[type="checkbox"]:checked ~ .body {
     min-width: 100vw;
     transform: translateX(-190px);
-
   }
 }

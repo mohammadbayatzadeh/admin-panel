@@ -3,7 +3,7 @@ import styles from "./HomePage.module.css";
 import Tag from "../elements/Tag";
 import SaleAnal from "../modules/SaleAnal";
 import AppSales from "../modules/AppSales";
-import Contact from "../elements/Contact";
+import TeamSwiper from "../elements/TeamSwiper";
 
 function HomePage() {
   return (
@@ -16,7 +16,7 @@ function HomePage() {
       </div>
       <SaleAnal />
       <AppSales />
-      <Contact />
+      <TeamSwiper />
     </div>
   );
 }
