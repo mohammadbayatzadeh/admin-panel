@@ -1,34 +1,62 @@
 import React from "react";
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "./styles.css";
+import styles from "./TeamSwiper.module.css";
+import { usersData } from "../../data/users/usersData";
 
-function TeamSwiper() {
+const TeamSwiperItem = () => {
+  const users = usersData;
   return (
-    <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-    </Swiper>
+    <div className={styles.itemContainer}>
+      <img
+        src={require(`../../data/users/${Math.floor(
+          Math.random() * 10 + 1
+        )}.jpg`)}
+      />
+      <p>{users[Math.floor(Math.random() * 10)].name}</p>
+    </div>
+  );
+};
+export default function TeamSwiper() {
+  return (
+    <div className={styles.container}>
+      <p>Team Members</p>
+      <Swiper
+        slidesPerView={"auto"}
+        centeredSlides={false}
+        spaceBetween={30}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+        <SwiperSlide>
+          <TeamSwiperItem />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 }
-
-export default TeamSwiper;

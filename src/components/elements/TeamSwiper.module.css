@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--text-color-secondary);
+  color: var(--text-color-primary);
+  padding: 15px;
+}
+
+.itemContainer {
+  width: 300px;
+  height: 300px;
+  border: 2px solid var(--text-color-secondary);
+  margin-bottom: 60px;
+}
+.itemContainer img {
+  border-radius: 30%;
+  border: 3px solid var(--text-color-primary);
+}
+.itemContainer p {
+  margin-top: 5px;
+}
