@@ -47,7 +47,7 @@ function WorldMap() {
 
     let chart = root.container.children.push(am5map.MapChart.new(root, {}));
 
-    let polygonSeries = chart.series.push(
+    chart.series.push(
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_worldLow,
         exclude: ["AQ"],

@@ -28,7 +28,7 @@ function Tag({ number, title }) {
             y="earnings"
             style={{
               data: {
-                fill: "#494953",
+                fill: "#ff5656",
               },
             }}
           />

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Layout.module.css";
 
 //pic
@@ -6,12 +5,13 @@ import NavSec from "../elements/NavSec";
 import UISec from "../elements/UISec";
 import AppSec from "../elements/AppSec";
 import FormSec from "../elements/FormSec";
+import { VscSignOut, VscSettingsGear } from "react-icons/vsc";
 
 function Layout({ children }) {
   return (
     <div className={styles.main_container}>
       <header className={styles.header}>
-        <a href="/">Admin panel</a>
+        <a href="/">Admin Panel</a>
         <div className={styles.userProfile}>
           <img
             src={require(`../../data/users/${Math.floor(
@@ -19,6 +19,12 @@ function Layout({ children }) {
             )}.jpg`)}
             alt={"profile"}
           />
+        </div>
+        <div className={styles.userProfile}>
+          <VscSettingsGear />
+        </div>
+        <div className={styles.userProfile}>
+          <VscSignOut />
         </div>
       </header>
       <div className={styles.container}>

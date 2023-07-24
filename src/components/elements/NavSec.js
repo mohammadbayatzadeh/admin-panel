@@ -13,13 +13,8 @@ function NavSec() {
     <div className={styles.section}>
       <p>Navigation</p>
       <ul>
-        <AsideItem
-          title="Dashboard"
-          list={["Default", "CRM", "Analytics"]}
-          icon={<VscHome />}
-          href="/"
-        />
-        <AsideItem title="Map" icon={<VscMap />}  href="/map"/>
+        <AsideItem title="Dashboard" icon={<VscHome />} href="/" />
+        <AsideItem title="Map" icon={<VscMap />} href="/map" />
         <AsideItem
           title="Page layout"
           list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTL"]}
