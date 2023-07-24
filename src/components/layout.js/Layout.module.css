@@ -31,7 +31,18 @@
   border-radius: 50%;
   margin-left: 5px;
 
-  border: 2px solid var(--text-color-tertiary);
+  border: 2px solid var(--text-color-secondary);
+}
+.counter {
+  position: absolute;
+  transform: translateX(6px) translateY(-6px);
+  color: black;
+  width: 12px;
+  height: 12px;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 0.5em;
 }
 .header .userProfile img {
   width: 100%;
@@ -67,7 +78,7 @@
 }
 .hamburger {
   position: fixed;
-  top: 60px;
+  top: 55px;
   left: 170px;
   width: 20px;
   height: 20px;
@@ -96,10 +107,11 @@
   opacity: 0;
 }
 .container input[type="checkbox"]:checked ~ .aside {
-  transform: translateX(-150px);
+  transform: translateX(-180px);
 }
 .container input[type="checkbox"]:checked ~ .hamburger {
   left: 20px;
+  top: 50px;
 }
 .container input[type="checkbox"]:checked ~ .hamburger span:first-child {
   width: 50%;
@@ -123,12 +135,13 @@
   color: black;
   min-height: fit-content;
   transition: 0.5s all ease;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .container input[type="checkbox"]:checked ~ .body {
-  min-width: 97vw;
-  transform: translateX(-150px);
+  min-width: 99vw;
+  transform: translateX(-170px);
 }
 
 @media (max-width: 1000px) {
@@ -136,16 +149,17 @@
     font-size: 1.2em;
   }
   .hamburger {
-    left: 10px;
+    left: 20px;
   }
   .aside {
-    transform: translateX(-160px);
+    transform: translateX(-190px);
   }
   .container input[type="checkbox"]:checked ~ .aside {
     transform: translateX(0px);
   }
   .container input[type="checkbox"]:checked ~ .hamburger {
-    transform: translateX(120px);
+    top: 60px;
+    transform: translateX(150px);
   }
 
   .hamburger span:first-child {
@@ -172,11 +186,12 @@
     opacity: 0;
   }
   .body {
-    min-width: 95vw;
-    transform: translateX(-150px);
+    min-width: 100vw;
+    transform: translateX(-190px);
   }
   .container input[type="checkbox"]:checked ~ .body {
-    min-width: 95vw;
-    transform: translateX(-150px);
+    min-width: 100vw;
+    transform: translateX(-190px);
+
   }
 }

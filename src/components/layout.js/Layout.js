@@ -5,7 +5,7 @@ import NavSec from "../elements/NavSec";
 import UISec from "../elements/UISec";
 import AppSec from "../elements/AppSec";
 import FormSec from "../elements/FormSec";
-import { VscSignOut, VscSettingsGear } from "react-icons/vsc";
+import { VscSignOut, VscSettingsGear, VscBellDot } from "react-icons/vsc";
 
 function Layout({ children }) {
   return (
@@ -19,6 +19,10 @@ function Layout({ children }) {
             )}.jpg`)}
             alt={"profile"}
           />
+        </div>
+        <div className={styles.userProfile}>
+          <p className={styles.counter}>{Math.floor(Math.random() * 10)}</p>
+          <VscBellDot />
         </div>
         <div className={styles.userProfile}>
           <VscSettingsGear />

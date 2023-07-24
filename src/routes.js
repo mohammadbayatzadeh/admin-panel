@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, redirect } from "react-router-dom";
 import HomePage from "./components/templates/HomePage";
 import MapPage from "./components/templates/MapPage";
 
