@@ -11,7 +11,7 @@ import {
 function DropDown({ isShow }) {
   if (isShow)
     return (
-      <div className={styles.container}>
+      <div className={styles.dropDontainer}>
         <a href="/#">
           <VscSettingsGear />
           <span>Setting</span>

@@ -1,4 +1,4 @@
-.container {
+.dropDontainer {
   position: absolute;
   top: 60px;
   right: 20px;
@@ -9,7 +9,9 @@
   border-radius: 10px;
   z-index: 2;
 }
-.container a {
+.dropDontainer a {
+  margin: 0;
+  font-size: 1em;
   display: flex;
   align-items: center;
   color: var(--bg-color-primary);
@@ -17,10 +19,10 @@
   padding: 10px 20px;
   transition: all 1s ease;
 }
-.container span {
+.dropDontainer span {
   margin-left: 5px;
 }
-.container a:hover {
+.dropDontainer a:hover {
   color: var(--text-color-secondary);
   background-color: var(--text-color-primary);
 }

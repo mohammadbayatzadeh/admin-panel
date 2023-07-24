@@ -1,7 +1,8 @@
 import React from "react";
+import WorldMap from "../elements/charts/WorldMap";
 
 function MapPage() {
-  return <div>MapPage</div>;
+  return <WorldMap />;
 }
 
 export default MapPage;

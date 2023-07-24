@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@amcharts/amcharts5": "^5.4.1",
+    "@amcharts/amcharts5-geodata": "^5.1.1",
     "@canvasjs/charts": "^3.7.13",
     "@canvasjs/react-charts": "^1.0.0",
     "@testing-library/jest-dom": "^5.17.0",

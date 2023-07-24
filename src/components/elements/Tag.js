@@ -14,7 +14,10 @@ function Tag({ number, title }) {
     <div className={styles.container}>
       <div className={styles.row}>
         <div>
-          <p className={styles.number}>{number}</p>
+          <p className={styles.number}>
+            {title === "All Earning" && "$"}
+            {Math.floor(Math.random() * 100000)}
+          </p>
           <p className={styles.title}>{title}</p>
         </div>
         <div className={styles.chart}>
@@ -34,7 +37,8 @@ function Tag({ number, title }) {
       <span className={styles.line}></span>
       <p className={styles.update}>
         <VscWatch />
-        update : 2:15 am
+        update : {Math.floor(Math.random() * 12 + 1)}:
+        {Math.floor(Math.random() * 60 + 1)} am
       </p>
     </div>
   );
