@@ -2,30 +2,23 @@ import { useState } from "react";
 import styles from "./Layout.module.css";
 
 //pic
-import { usersData } from "../../data/users/usersData";
-import { VscArrowSmallDown } from "react-icons/vsc";
-import profile from "../../data/users/1.jpg";
-import DropDown from "../modules/DropDown";
 import NavSec from "../elements/NavSec";
 import UISec from "../elements/UISec";
 import AppSec from "../elements/AppSec";
 import FormSec from "../elements/FormSec";
 
 function Layout({ children }) {
-  const [settingIsShow, setSettingIsShow] = useState(false);
-
   return (
     <div className={styles.main_container}>
       <header className={styles.header}>
         <a href="/">Admin panel</a>
-        <div
-          className={styles.userProfile}
-          onClick={() => setSettingIsShow(!settingIsShow)}
-        >
-          <img src={profile} alt={usersData[0].name} />
-          <span>{usersData[0].name}</span>
-          <VscArrowSmallDown style={{ transform: "translateY(2px)" }} />
-          <DropDown isShow={settingIsShow} />
+        <div className={styles.userProfile}>
+          <img
+            src={require(`../../data/users/${Math.floor(
+              Math.random() * 10 + 1
+            )}.jpg`)}
+            alt={"profile"}
+          />
         </div>
       </header>
       <div className={styles.container}>

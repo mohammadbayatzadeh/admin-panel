@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./AsideItem.module.css";
 import { VscArrowSmallDown } from "react-icons/vsc";
 
-function AsideItem({ title, list = [], icon }) {
+function AsideItem({ title, list = [], icon, href = '/#' }) {
   const [isShow, setIsShow] = useState(false);
   const [anime, setAnime] = useState(false);
   return (
@@ -12,7 +12,7 @@ function AsideItem({ title, list = [], icon }) {
       onMouseEnter={() => setAnime(true)}
       onMouseLeave={() => setAnime(false)}
     >
-      <a href={title === "Map" ? "./map" : "/"} className={styles.topTitle}>
+      <a href={href} className={styles.topTitle}>
         <span
           className={
             title === "Animations"
@@ -35,7 +35,7 @@ function AsideItem({ title, list = [], icon }) {
             >
               <a
                 key={item}
-                href="/#"
+                href={href}
                 className={
                   isShow
                     ? `${styles.subTitle} ${styles.active}`

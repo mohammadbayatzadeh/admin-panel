@@ -64,6 +64,7 @@
 .item a {
   color: var(--text-color-primary);
   text-decoration: none;
+  transition: all .5s ease;
 }
 .item a:hover {
   background-color: var(--bg-color-secondary);

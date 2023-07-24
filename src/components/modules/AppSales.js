@@ -22,6 +22,7 @@ function AppSales() {
         <Message />
         <Message />
         <Message />
+        <a href="/#">View all Projects</a>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import {
   VscLayoutSidebarRightOff,
   VscMenu,
   VscEditorLayout,
+  VscMap,
 } from "react-icons/vsc";
 
 function NavSec() {
@@ -16,8 +17,9 @@ function NavSec() {
           title="Dashboard"
           list={["Default", "CRM", "Analytics"]}
           icon={<VscHome />}
+          href="/"
         />
-        <AsideItem title="Map" icon={<VscHome />}  />
+        <AsideItem title="Map" icon={<VscMap />}  href="/map"/>
         <AsideItem
           title="Page layout"
           list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTL"]}
