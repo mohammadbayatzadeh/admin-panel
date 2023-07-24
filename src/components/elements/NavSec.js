@@ -17,6 +17,7 @@ function NavSec() {
           list={["Default", "CRM", "Analytics"]}
           icon={<VscHome />}
         />
+        <AsideItem title="Map" icon={<VscHome />}  />
         <AsideItem
           title="Page layout"
           list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTL"]}

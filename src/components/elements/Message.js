@@ -7,7 +7,10 @@ function Message() {
   const data = usersData;
   return (
     <div className={styles.container}>
-      <img src={require(`../../data/users/${Math.floor(Math.random() * 10+1)}.jpg`)} alt="profile " />
+      <img
+        src={require(`../../data/users/${Math.floor(Math.random() * 10+1)}.jpg`)}
+        alt="profile "
+      />
       <div>
         <p className={styles.top}>
           {data[Math.floor(Math.random() * 10)].name}

@@ -13,7 +13,8 @@
   background-color: var(--bg-color-primary);
   padding: 0 10px;
 }
-.header p {
+.header a {
+  text-decoration: none;
   font-size: 1.8em;
   color: var(--text-color-secondary);
   margin: 10px 5px 20px;
@@ -125,7 +126,7 @@
 }
 
 @media (max-width: 1000px) {
-  .header p {
+  .header a {
     font-size: 1.2em;
   }
   .hamburger {

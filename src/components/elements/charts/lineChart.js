@@ -58,15 +58,14 @@ function SaleAnal() {
       })
     );
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 5; i++) {
       let series = chart.series.push(
         am5xy.LineSeries.new(root, {
-          name: "Series " + i,
+          name: i,
           xAxis: xAxis,
           yAxis: yAxis,
           valueYField: "value",
           valueXField: "date",
-          legendValueText: "{valueY}",
           tooltip: am5.Tooltip.new(root, {
             pointerOrientation: "horizontal",
             labelText: "{valueY}",
@@ -83,14 +82,6 @@ function SaleAnal() {
       series.appear();
     }
 
-    let cursor = chart.set(
-      "cursor",
-      am5xy.XYCursor.new(root, {
-        behavior: "none",
-      })
-    );
-    cursor.lineY.set("visible", false);
-
     chart.set(
       "scrollbarX",
       am5.Scrollbar.new(root, {
@@ -98,17 +89,9 @@ function SaleAnal() {
       })
     );
 
-    chart.set(
-      "scrollbarY",
-      am5.Scrollbar.new(root, {
-        orientation: "vertical",
-      })
-    );
-
     let legend = chart.rightAxesContainer.children.push(
       am5.Legend.new(root, {
-        width: 200,
-        paddingLeft: 15,
+        width: 30,
         height: am5.percent(100),
       })
     );
@@ -145,8 +128,8 @@ function SaleAnal() {
 
     legend.itemContainers.template.set("width", am5.p100);
     legend.valueLabels.template.setAll({
-      width: am5.p100,
-      textAlign: "right",
+      width: am5.p0,
+      textAlign: "left",
     });
 
     legend.data.setAll(chart.series.values);

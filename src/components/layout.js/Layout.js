@@ -17,7 +17,7 @@ function Layout({ children }) {
   return (
     <div className={styles.main_container}>
       <header className={styles.header}>
-        <p>Admin Panel</p>
+        <a href="/">Admin panel</a>
         <div
           className={styles.userProfile}
           onClick={() => setSettingIsShow(!settingIsShow)}

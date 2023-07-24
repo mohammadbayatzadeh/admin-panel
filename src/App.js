@@ -1,11 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
 import Layout from "./components/layout.js/Layout";
-import HomePage from "./components/templates/HomePage";
+import RoutesMap from "./routes";
 
 function App() {
   return (
-    <Layout>
-      <HomePage />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <RoutesMap />
+      </Layout>
+    </BrowserRouter>
   );
 }
 

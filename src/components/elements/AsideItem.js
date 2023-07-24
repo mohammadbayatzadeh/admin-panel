@@ -4,10 +4,22 @@ import { VscArrowSmallDown } from "react-icons/vsc";
 
 function AsideItem({ title, list = [], icon }) {
   const [isShow, setIsShow] = useState(false);
+  const [anime, setAnime] = useState(false);
   return (
-    <li onClick={() => setIsShow(!isShow)} className={styles.item}>
-      <a href="/#" className={styles.topTitle}>
-        <span className={title === "Animations" && styles.animation}>
+    <li
+      onClick={() => setIsShow(!isShow)}
+      className={styles.item}
+      onMouseEnter={() => setAnime(true)}
+      onMouseLeave={() => setAnime(false)}
+    >
+      <a href={title === "Map" ? "./map" : "/"} className={styles.topTitle}>
+        <span
+          className={
+            title === "Animations"
+              ? styles.animation
+              : anime && styles.animation
+          }
+        >
           {icon}
         </span>
         <span className={styles.title}>{title}</span>
