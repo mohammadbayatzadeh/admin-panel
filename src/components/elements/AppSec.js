@@ -7,6 +7,7 @@ import {
   VscPass,
   VscBriefcase,
   VscSymbolColor,
+  VscEditorLayout,
 } from "react-icons/vsc";
 
 function AppSec() {
@@ -24,6 +25,11 @@ function AppSec() {
           title="Task"
           icon={<VscTag />}
           list={["Task List", "Task Board", "Task Details"]}
+        />
+        <AsideItem
+          title="Widget"
+          icon={<VscEditorLayout />}
+          list={["Static", "Data", "Chart Widget"]}
         />
         <AsideItem title="To-Do" icon={<VscPass />} list={["To-Do", "Notes"]} />
         <AsideItem

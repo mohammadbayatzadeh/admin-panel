@@ -4,6 +4,7 @@ import {
   VscTerminalDebian,
   VscMultipleWindows,
   VscLoading,
+  VscLayoutSidebarRightOff,
 } from "react-icons/vsc";
 
 function UISec() {
@@ -15,6 +16,11 @@ function UISec() {
           title="Basic Components"
           list={["Alert", "Button", "Accordion"]}
           icon={<VscMultipleWindows />}
+        />
+        <AsideItem
+          title="Page layout"
+          list={["Vertical", "Horizontal", "Bottom Menu", "Box Layout", "RTL"]}
+          icon={<VscLayoutSidebarRightOff />}
         />
 
         <AsideItem title="Animations" icon={<VscTerminalDebian />} />

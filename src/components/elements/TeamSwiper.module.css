@@ -7,7 +7,9 @@
   color: var(--text-color-primary);
   padding: 15px;
 }
-
+.container  p{
+  margin-bottom: 10px;
+}
 .itemContainer {
   width: 300px;
   height: 300px;
