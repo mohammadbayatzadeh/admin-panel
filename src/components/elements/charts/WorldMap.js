@@ -6,7 +6,6 @@ import am5geodata_worldLow from "@amcharts/amcharts5-geodata/worldLow";
 import * as am5map from "@amcharts/amcharts5/map";
 function WorldMap() {
   useLayoutEffect(() => {
-    /* Chart code */
     let data = [
       {
         id: "US",
@@ -116,7 +115,6 @@ function WorldMap() {
       });
     });
 
-    // minValue and maxValue must be set for the animations to work
     bubbleSeries.set("heatRules", [
       {
         target: circleTemplate,

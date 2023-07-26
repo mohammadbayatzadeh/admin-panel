@@ -8,12 +8,8 @@ function WordChart() {
   useLayoutEffect(() => {
     let root = am5.Root.new("word");
 
-    // Set themes
-    // https://www.amcharts.com/docs/v5/concepts/themes/
     root.setThemes([am5themes_Animated.new(root)]);
 
-    // Add series
-    // https://www.amcharts.com/docs/v5/charts/word-cloud/
     let series = root.container.children.push(
       am5wc.WordCloud.new(root, {
         categoryField: "tag",
@@ -22,7 +18,6 @@ function WordChart() {
       })
     );
 
-    // Configure labels
     series.labels.template.setAll({
       fontFamily: "Courier New",
     });

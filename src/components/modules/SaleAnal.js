@@ -16,7 +16,6 @@ function SaleAnal() {
       </div>
       <div className={styles.cirChart}>
         <p>Project Risk</p>
-        <p>Balance</p>
         <CircleChart />
         <a href="/#">Change your risk</a>
         <span className={styles.line}></span>

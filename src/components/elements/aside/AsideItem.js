@@ -17,7 +17,7 @@ function AsideItem({ title, list = [], icon, href = '/#' }) {
           className={
             title === "Animations"
               ? styles.animation
-              : anime && styles.animation
+              : anime ? styles.animation : null
           }
         >
           {icon}
@@ -27,8 +27,9 @@ function AsideItem({ title, list = [], icon, href = '/#' }) {
       </a>
       {list.length > 0 && (
         <>
-          {list.map((item) => (
+          {list.map((item ,index) => (
             <div
+            key={index  }
               className={
                 isShow ? `${styles.subList} ${styles.active}` : styles.subList
               }

@@ -10,7 +10,7 @@ function NavSec() {
         <AsideItem title="Dashboard" icon={<VscHome />} href="/" />
         <AsideItem title="Map" icon={<VscMap />} href="/map" />
 
-        <AsideItem title="Contact Me" icon={<VscAccount />} href="/me" />
+        <AsideItem title="Contact Me" icon={<VscAccount />} href="/contact" />
       </ul>
     </div>
   );

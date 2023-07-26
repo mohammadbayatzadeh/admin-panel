@@ -99,7 +99,6 @@ function SaleAnal() {
     legend.itemContainers.template.events.on("pointerover", function (e) {
       let itemContainer = e.target;
 
-      // As series list is data of a legend, dataContext is series
       let series = itemContainer.dataItem.dataContext;
 
       chart.series.each(function (chartSeries) {
