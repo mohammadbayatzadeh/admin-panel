@@ -2,6 +2,8 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./components/layout.js/Layout";
 import RoutesMap from "./routes";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import Store from "./app/store";
 
 function App() {
   useEffect(() => {
@@ -9,11 +11,13 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Layout>
-        <RoutesMap />
-      </Layout>
-    </BrowserRouter>
+    <Provider store={Store}>
+      <BrowserRouter>
+        <Layout>
+          <RoutesMap />
+        </Layout>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

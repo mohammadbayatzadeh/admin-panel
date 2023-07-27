@@ -1,6 +1,6 @@
 import styles from "./Sec.module.css";
 import AsideItem from "./AsideItem";
-import { VscHome, VscMap, VscAccount } from "react-icons/vsc";
+import { VscHome, VscMap, VscAccount, VscPackage } from "react-icons/vsc";
 
 function NavSec() {
   return (
@@ -9,6 +9,11 @@ function NavSec() {
       <ul>
         <AsideItem title="Dashboard" icon={<VscHome />} href="/" />
         <AsideItem title="Map" icon={<VscMap />} href="/map" />
+        <AsideItem
+          title="Manage Items"
+          icon={<VscPackage />}
+          href="/manage-items"
+        />
 
         <AsideItem title="Contact Me" icon={<VscAccount />} href="/contact" />
       </ul>
