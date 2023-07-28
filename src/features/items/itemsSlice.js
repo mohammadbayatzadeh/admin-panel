@@ -18,20 +18,20 @@ export const itemSlice = createSlice({
   initialState,
   reducers: {},
 
-  extraReducers: {
-    [getItems.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(getItems.pending, (state) => {
       state.loading = true;
-    },
-    [getItems.fulfilled]: (state, { payload }) => {
+    });
+    builder.addCase(getItems.fulfilled, (state, { payload }) => {
       state.loading = false;
       state.data = payload;
-    },
-    [getItems.rejected]: (state, { payload }) => {
+    });
+    builder.addCase(getItems.rejected, (state, { payload }) => {
       state.loading = false;
       state.error = "error" + payload;
-    },
+    });
   },
 });
 
 export const itemReducer = itemSlice.reducer;
-export {getItems}
+export { getItems };

@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./ItemCard.module.css";
-import { shorten } from "../../functions/functions";
+import { seperatePrice, shorten } from "../../functions/functions";
 
-function ItemCard({ title, image, category }) {
+function ItemCard({ title, image, category, price }) {
+  const splitPrice = seperatePrice(`${price}`);
   return (
     <div className={styles.card}>
       <div className={styles.imgBox}>
@@ -12,7 +13,7 @@ function ItemCard({ title, image, category }) {
       <div className={styles.contentBox}>
         <h3>{shorten(title)}</h3>
         <h2 className={styles.price}>
-          61.<small>98</small> €
+          {+splitPrice[0]}.<small>{splitPrice[1]}</small> €
         </h2>
         <a href="#" className={styles.buy}>
           ADD

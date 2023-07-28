@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./AsideItem.module.css";
 import { VscArrowSmallDown } from "react-icons/vsc";
 
-function AsideItem({ title, list = [], icon, href = '/#' }) {
+function AsideItem({ title, list = [], icon, href = '#' }) {
   const [isShow, setIsShow] = useState(false);
   const [anime, setAnime] = useState(false);
   return (
