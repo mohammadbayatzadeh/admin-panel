@@ -28,7 +28,7 @@ export const itemSlice = createSlice({
     });
     builder.addCase(getItems.rejected, (state, { payload }) => {
       state.loading = false;
-      state.error = "error" + payload;
+      state.error =  payload;
     });
   },
 });
