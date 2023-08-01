@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { darkMode, lightMode } from "../../features/theme/themeSlice";
 
 //styles
 import styles from "./Layout.module.css";
@@ -10,6 +12,8 @@ import UISec from "../elements/aside/UISec";
 import FormSec from "../elements/aside/FormSec";
 
 //icons
+import Sun from "../icons/Sun";
+import Moon from "../icons/Moon";
 import {
   VscSignOut,
   VscSettingsGear,
@@ -17,24 +21,15 @@ import {
   VscSearch,
 } from "react-icons/vsc";
 
-const LayoutButton = ({ href, children }) => {
-  if (href)
-    return (
-      <a className={styles.LayoutButton} href={href}>
-        {children}
-      </a>
-    );
-  return <div className={styles.LayoutButton}>{children}</div>;
-};
-
 function Layout({ children }) {
   const ref = useRef();
+  const { theme } = useSelector((state) => state.theme);
+  const dispatch = useDispatch();
 
   const searchHandler = () => {
     if (ref.current.value.length > 0) {
-      console.log(ref.current.value);
       ref.current.value = "";
-    } else {  
+    } else {
       ref.current.focus();
     }
   };
@@ -45,6 +40,13 @@ function Layout({ children }) {
         <a href="/ " className={styles.logo}>
           Admin Panel
         </a>
+        <span
+          onClick={() =>
+            theme === "light" ? dispatch(darkMode()) : dispatch(lightMode())
+          }
+        >
+          {theme === "light" ? <Sun /> : <Moon />}
+        </span>
         <LayoutButton href="/contact">
           <img src={require(`../../data/users/profile.jpeg`)} alt={"profile"} />
         </LayoutButton>
@@ -88,3 +90,13 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
+const LayoutButton = ({ href, children }) => {
+  if (href)
+    return (
+      <a className={styles.LayoutButton} href={href}>
+        {children}
+      </a>
+    );
+  return <div className={styles.LayoutButton}>{children}</div>;
+};
