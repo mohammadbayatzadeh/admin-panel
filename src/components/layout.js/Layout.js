@@ -1,6 +1,4 @@
-import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { darkMode, lightMode } from "../../features/theme/themeSlice";
+import { useEffect, useRef, useState } from "react";
 
 //styles
 import styles from "./Layout.module.css";
@@ -23,8 +21,24 @@ import {
 
 function Layout({ children }) {
   const ref = useRef();
-  const { theme } = useSelector((state) => state.theme);
-  const dispatch = useDispatch();
+  const [mode, setMode] = useState("light");
+  const storedMode = localStorage.getItem("mode");
+  if (storedMode == null) {
+    localStorage.setItem("mode", "light");
+  }
+  useEffect(() => {
+    setMode(storedMode);
+  }, []);
+
+  const themeHandler = () => {
+    if (storedMode === "light" || storedMode === null) {
+      localStorage.setItem("mode", "dark");
+      setMode("dark");
+    } else {
+      localStorage.setItem("mode", "light");
+      setMode("light");
+    }
+  };
 
   const searchHandler = () => {
     if (ref.current.value.length > 0) {
@@ -35,17 +49,13 @@ function Layout({ children }) {
   };
 
   return (
-    <div className={styles.main_container}>
+    <div className={styles.main_container} id={[mode]}>
       <header className={styles.header}>
         <a href="/ " className={styles.logo}>
           Admin Panel
         </a>
-        <span
-          onClick={() =>
-            theme === "light" ? dispatch(darkMode()) : dispatch(lightMode())
-          }
-        >
-          {theme === "light" ? <Sun /> : <Moon />}
+        <span onClick={() => themeHandler()}>
+          {mode === "light" ? <Sun /> : <Moon />}
         </span>
         <LayoutButton href="/contact">
           <img src={require(`../../data/users/profile.jpeg`)} alt={"profile"} />

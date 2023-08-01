@@ -12,11 +12,11 @@ function App() {
 
   return (
     <Provider store={Store}>
-      <BrowserRouter>
-        <Layout>
+      <Layout>
+        <BrowserRouter>
           <RoutesMap />
-        </Layout>
-      </BrowserRouter>
+        </BrowserRouter>
+      </Layout>
     </Provider>
   );
 }

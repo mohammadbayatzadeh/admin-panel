@@ -1,9 +1,18 @@
-:root {
+:root #light {
   --bg-color-primary: #6a7efc;
   --bg-color-secondary: #ced4d9;
   --bg-color-tertiary: #ffffff7a;
   --text-color-primary: #494953;
-  --text-color-secondary: #fff;
+  --text-color-secondary: #ffffff;
+  --text-color-tertiary: #ff5656;
+}
+
+:root #dark {
+  --bg-color-primary: #6a7efc;
+  --bg-color-secondary: #393a3b;
+  --bg-color-tertiary: #6b6767;
+  --text-color-primary: #fdfdff;
+  --text-color-secondary: #414040;
   --text-color-tertiary: #ff5656;
 }
 * {
