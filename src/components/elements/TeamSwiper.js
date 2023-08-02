@@ -19,6 +19,8 @@ const TeamSwiperItem = () => {
     </div>
   );
 };
+
+
 export default function TeamSwiper() {
   return (
     <div className={styles.container}>
@@ -29,7 +31,7 @@ export default function TeamSwiper() {
         spaceBetween={30}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide >
           <TeamSwiperItem />
         </SwiperSlide>
         <SwiperSlide>
