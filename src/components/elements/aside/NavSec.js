@@ -1,5 +1,10 @@
+//styles
 import styles from "./Sec.module.css";
+
+//comps
 import AsideItem from "./AsideItem";
+
+//icons
 import { VscHome, VscMap, VscAccount, VscPackage } from "react-icons/vsc";
 
 function NavSec() {

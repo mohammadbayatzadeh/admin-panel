@@ -1,9 +1,15 @@
 import React from "react";
+
+//swiper
 import { Swiper, SwiperSlide } from "swiper/react";
+
+//styles
+import styles from "./TeamSwiper.module.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
-import styles from "./TeamSwiper.module.css";
+
+//data
 import { usersData } from "../../data/users/usersData";
 
 const TeamSwiperItem = () => {

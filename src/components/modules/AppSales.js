@@ -1,5 +1,9 @@
 import React from "react";
+
+//styles
 import styles from "./AppSales.module.css";
+
+//comps
 import SaleItem from "../elements/SaleItem";
 import Message from "../elements/Message";
 

@@ -1,5 +1,10 @@
+//styles
 import styles from "./Tag.module.css";
+
+//icons
 import { VscWatch } from "react-icons/vsc";
+
+//chart
 import { VictoryBar } from "victory";
 
 function Tag({ number, title }) {

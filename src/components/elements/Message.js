@@ -1,14 +1,22 @@
 import React from "react";
+
+//styles
 import styles from "./Message.module.css";
+
+//icnos
 import { VscWatch } from "react-icons/vsc";
+
+//data
 import { usersData } from "../../data/users/usersData";
-// import pic1 from "../../data/users/2.jpg";
+
 function Message() {
   const data = usersData;
   return (
     <div className={styles.container}>
       <img
-        src={require(`../../data/users/${Math.floor(Math.random() * 10+1)}.jpg`)}
+        src={require(`../../data/users/${Math.floor(
+          Math.random() * 10 + 1
+        )}.jpg`)}
         alt="profile "
       />
       <div>

@@ -1,5 +1,9 @@
 import React from "react";
+
+//styles
 import styles from "./ItemCard.module.css";
+
+//functions
 import { seperatePrice, shorten } from "../../functions/functions";
 
 function ItemCard({ title, image, category, price }) {

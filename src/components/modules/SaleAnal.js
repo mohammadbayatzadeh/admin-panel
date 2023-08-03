@@ -1,5 +1,7 @@
+//styles
 import styles from "./SaleAnal.module.css";
 
+//charts
 import LineChart from "../elements/charts/lineChart";
 import CircleChart from "../elements/charts/circleChart";
 

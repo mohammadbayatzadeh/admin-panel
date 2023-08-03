@@ -1,5 +1,9 @@
 import React from "react";
+
+//styles
 import styles from "./SaleItem.module.css";
+
+//chart
 import ChangeChart from "./charts/ChangeChart";
 
 function SaleItem({ head }) {

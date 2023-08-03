@@ -1,5 +1,9 @@
 import React from "react";
+
+//styles
 import styles from "./Contact.module.css";
+
+//chart
 import WordChart from "./charts/WordChart";
 
 function Contact() {

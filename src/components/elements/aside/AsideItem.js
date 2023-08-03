@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import styles from "./AsideItem.module.css";
+
+//icons
 import { VscArrowSmallDown } from "react-icons/vsc";
 
-function AsideItem({ title, list = [], icon, href = '#' }) {
+//styles
+import styles from "./AsideItem.module.css";
+
+function AsideItem({ title, list = [], icon, href = "#" }) {
   const [isShow, setIsShow] = useState(false);
   const [anime, setAnime] = useState(false);
   return (
@@ -17,7 +21,9 @@ function AsideItem({ title, list = [], icon, href = '#' }) {
           className={
             title === "Animations"
               ? styles.animation
-              : anime ? styles.animation : null
+              : anime
+              ? styles.animation
+              : null
           }
         >
           {icon}
@@ -27,9 +33,9 @@ function AsideItem({ title, list = [], icon, href = '#' }) {
       </a>
       {list.length > 0 && (
         <>
-          {list.map((item ,index) => (
+          {list.map((item, index) => (
             <div
-            key={index  }
+              key={index}
               className={
                 isShow ? `${styles.subList} ${styles.active}` : styles.subList
               }

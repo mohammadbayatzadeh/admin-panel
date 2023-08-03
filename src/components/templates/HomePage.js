@@ -1,8 +1,14 @@
 import React from "react";
+
+//styles
 import styles from "./HomePage.module.css";
+
+//comps
 import Tag from "../elements/Tag";
 import SaleAnal from "../modules/SaleAnal";
 import AppSales from "../modules/AppSales";
+
+//swiper
 import TeamSwiper from "../elements/TeamSwiper";
 
 function HomePage() {

@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
+
+//redux
 import { useDispatch, useSelector } from "react-redux";
 import { getItems } from "../../features/items/itemsSlice";
+
+//comps
 import ItemCard from "../modules/ItemCard";
-import styles from "./ManageItems.module.css";
 import Loading from "../modules/Loading";
+
+//styles
+import styles from "./ManageItems.module.css";
 
 function ManageItems() {
   const dispatch = useDispatch();
