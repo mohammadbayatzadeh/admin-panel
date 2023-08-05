@@ -19,7 +19,7 @@ function ItemCard({ title, image, category, price }) {
         <h2 className={styles.price}>
           {+splitPrice[0]}.<small>{splitPrice[1]}</small> €
         </h2>
-        <a href="#" className={styles.buy}>
+        <a href="/#" className={styles.buy}>
           ADD
         </a>
         <p className={styles.backText}>{category}</p>

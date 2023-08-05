@@ -20,6 +20,7 @@ const TeamSwiperItem = () => {
         src={require(`../../data/users/${Math.floor(
           Math.random() * 10 + 1
         )}.jpg`)}
+        alt="team member"
       />
       <p>{users[Math.floor(Math.random() * 10)].name}</p>
     </div>

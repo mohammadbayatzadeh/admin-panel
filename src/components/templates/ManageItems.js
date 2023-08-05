@@ -15,7 +15,10 @@ function ManageItems() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.items);
   useEffect(() => {
-    dispatch(getItems());
+    function fetchItems() {
+      dispatch(getItems());
+    }
+    fetchItems();
   }, []);
 
   if (loading) return <Loading />;
