@@ -24,7 +24,7 @@ function Contact() {
             <span className={styles.line}></span>
             <p className={styles.head}>bio</p>
             <p>
-              Self-studied Front-End developer with 1 year exprience with
+              Self-studied Front-End developer with 2 year exprience with
               Reactjs, Nextjs frameworks.
             </p>
           </div>
