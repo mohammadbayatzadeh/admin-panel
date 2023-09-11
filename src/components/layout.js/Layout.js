@@ -25,6 +25,7 @@ function Layout({ children }) {
   const storedMode = localStorage.getItem("mode");
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
+    setMode('light');
   }
   useEffect(() => {
     setMode(storedMode);
