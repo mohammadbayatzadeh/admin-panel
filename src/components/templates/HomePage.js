@@ -1,15 +1,15 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 //styles
 import styles from "./HomePage.module.css";
 
 //comps
-import Tag from "../elements/Tag";
-import SaleAnal from "../modules/SaleAnal";
-import AppSales from "../modules/AppSales";
+const Tag = lazy(() => import("../elements/Tag"));
+const SaleAnal = lazy(() => import("../modules/SaleAnal"));
+const AppSales = lazy(() => import("../modules/AppSales"));
 
 //swiper
-import TeamSwiper from "../elements/TeamSwiper";
+const TeamSwiper = lazy(() => import("../elements/TeamSwiper"));
 
 function HomePage() {
   return (
@@ -21,8 +21,10 @@ function HomePage() {
         <Tag number={500} title="Downloads" />
       </div>
       <SaleAnal />
-      <AppSales />
-      <TeamSwiper />
+      <Suspense fallback={<div>loading...</div>}>
+        <AppSales />
+        <TeamSwiper />
+      </Suspense>
     </div>
   );
 }

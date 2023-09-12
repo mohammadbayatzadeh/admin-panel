@@ -1,18 +1,21 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "./components/templates/HomePage";
-import MapPage from "./components/templates/MapPage";
-import ContactPage from "./components/templates/ContactPage";
-import ManageItems from "./components/templates/ManageItems";
+
+const HomePage = lazy(() => import("./components/templates/HomePage"));
+const MapPage = lazy(() => import("./components/templates/MapPage"));
+const ContactPage = lazy(() => import("./components/templates/ContactPage"));
+const ManageItems = lazy(() => import("./components/templates/ManageItems"));
 
 function RoutesMap() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/map" element={<MapPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/manage-items" element={<ManageItems />} />
-    </Routes>
+    <Suspense fallback={<div>Route loading ...</div>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/manage-items" element={<ManageItems />} />
+      </Routes>
+    </Suspense>
   );
 }
 
