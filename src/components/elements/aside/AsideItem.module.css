@@ -9,17 +9,13 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.item:hover .topTitle span {
-  animation: vibrate .2s ease infinite;
+.item p {
+  transition: all 0.5s ease;
 }
-@keyframes vibrate {
-  0% {
-    transform: translateX(0) ;
-  }
-  100% {
-    transform:  translateX(-1px);
-  }
+.item:hover p {
+  transform: translateX(10px);
 }
+
 .item .topTitle {
   display: flex;
   align-items: flex-start;

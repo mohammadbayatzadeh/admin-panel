@@ -12,9 +12,9 @@ import Store from "./app/store";
 import { Provider } from "react-redux";
 
 function App() {
-  // useEffect(() => {
-  //   document.title = "Admin Panel ";
-  // }, []);
+  useEffect(() => {
+    document.title = "Admin Panel ";
+  }, []);
 
   return (
     <Provider store={Store}>

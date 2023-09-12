@@ -8,8 +8,7 @@
   transition: all 0.5s ease;
 }
 .card:hover {
-  transform: scaleX(1.05);
-  /* width: 23%; */
+  transform: scale(1.02);
 }
 .card::before {
   content: "";
@@ -34,7 +33,7 @@
   font-weight: 600;
   font-size: 1em;
   text-align: center;
-  color: rgba(0, 0, 0, 0.1);
+  color: var(--text-color-primary);
 }
 
 .card .imgBox {
@@ -98,8 +97,8 @@
 }
 
 .mouse {
-  height: 300px;
-  width: auto;
+  aspect-ratio: 9/11;
+  width: 100%;
 }
 @media (max-width: 800px) {
   .card {

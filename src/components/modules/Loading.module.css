@@ -1,10 +1,14 @@
+.container {
+  width: 100%;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+}
 .loadingContainer {
   display: flex;
-  position: relative;
-  left: 40%;
-  top: 40%;
-  width: 3 00px;
-  height: 3 00px;
+  width: 300px;
+  height: 300px;
   background: none;
 }
 .loadingContainer span {
