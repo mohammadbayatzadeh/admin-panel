@@ -8,7 +8,11 @@ import CircleChart from "../elements/charts/circleChart";
 function SaleAnal() {
   return (
     <div className={styles.container}>
-      <div className={styles.analytic}>
+      <div
+        className={styles.analytic}
+        data-aos="fade-right"
+        data-aos-delay={500}
+      >
         <p className={styles.title}>Sales Analytics</p>
         <p className={styles.subTitle}>
           For more details about usage, please refer <a href="/#">amCharts </a>{" "}
@@ -16,7 +20,11 @@ function SaleAnal() {
         </p>
         <LineChart />
       </div>
-      <div className={styles.cirChart}>
+      <div
+        className={styles.cirChart}
+        data-aos="fade-left"
+        data-aos-delay={500}
+      >
         <p>Project Risk</p>
         <CircleChart />
         <a href="/#">Change your risk</a>

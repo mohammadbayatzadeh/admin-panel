@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //styles
 import styles from "./AppSales.module.css";

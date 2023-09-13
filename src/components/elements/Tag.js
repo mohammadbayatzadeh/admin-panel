@@ -16,7 +16,7 @@ function Tag({ number, title }) {
     { quarter: "Jun", earnings: Math.random() * 1000 + 100 },
   ];
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-aos="fade-up" data-aos-delay={200}>
       <div className={styles.row}>
         <div>
           <p className={styles.number}>
