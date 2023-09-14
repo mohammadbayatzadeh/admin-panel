@@ -28,6 +28,7 @@ function CircleChart() {
       textType: "circular",
       centerX: 0,
       centerY: 0,
+      
     });
 
     series.data.setAll([

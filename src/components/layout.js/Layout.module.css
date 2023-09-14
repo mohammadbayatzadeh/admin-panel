@@ -104,6 +104,11 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+.aside::-webkit-scrollbar,
+.body::-webkit-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
 .container input {
   display: none;
 }

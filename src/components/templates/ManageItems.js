@@ -14,11 +14,9 @@ import styles from "./ManageItems.module.css";
 function ManageItems() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.items);
+
   useEffect(() => {
-    function fetchItems() {
-      dispatch(getItems());
-    }
-    fetchItems();
+    dispatch(getItems());
   }, []);
 
   if (loading) return <Loading />;
