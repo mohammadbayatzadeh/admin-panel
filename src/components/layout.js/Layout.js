@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 //styles
 import styles from "./Layout.module.css";
+import Zoom from "react-reveal/Zoom";
 
 //elements
 import AppSec from "../elements/aside/AppSec";
@@ -25,7 +26,7 @@ function Layout({ children }) {
   const storedMode = localStorage.getItem("mode");
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
-    setMode('light');
+    setMode("light");
   }
   useEffect(() => {
     setMode(storedMode);
@@ -53,7 +54,9 @@ function Layout({ children }) {
     <div className={styles.main_container} id={[mode]}>
       <header className={styles.header}>
         <a href="/ " className={styles.logo}>
-          Admin Panel
+          <Zoom right cascade>
+            Admin Panel
+          </Zoom>
         </a>
         <span onClick={() => themeHandler()}>
           {mode === "light" ? <Sun /> : <Moon />}

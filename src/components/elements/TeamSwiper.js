@@ -8,6 +8,7 @@ import styles from "./TeamSwiper.module.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
+import Slide from "react-reveal/Slide";
 
 //data
 import { usersData } from "../../data/users/usersData";
@@ -30,41 +31,43 @@ const TeamSwiperItem = () => {
 export default function TeamSwiper() {
   return (
     <div className={styles.container}>
+      <Slide bottom cascade>
       <p>Team Members</p>
-      <Swiper
-        slidesPerView={"auto"}
-        centeredSlides={false}
-        spaceBetween={30}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TeamSwiperItem />
-        </SwiperSlide>
-      </Swiper>
+        <Swiper
+          slidesPerView={"auto"}
+          centeredSlides={false}
+          spaceBetween={30}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TeamSwiperItem />
+          </SwiperSlide>
+        </Swiper>
+      </Slide>
     </div>
   );
 }

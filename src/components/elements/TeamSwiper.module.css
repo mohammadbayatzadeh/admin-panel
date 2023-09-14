@@ -16,7 +16,6 @@
   width: 300px;
   height: 300px;
   border: 2px solid var(--text-color-secondary);
-  /* margin-bottom: 60px; */
   color: var(--text-color-primary);
 }
 .itemContainer img {
