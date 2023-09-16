@@ -17,7 +17,7 @@ function HomePage() {
   return (
     <div className={styles.container}>
       <Suspense fallback={<Loading />}>
-        <Slide bottom cascade>
+        <Slide bottom >
           <div className={styles.topContainer}>
             <Tag number="$32000" title="All Earning" />
             <Tag number="290+" title="Page Views" />
