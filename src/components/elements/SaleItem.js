@@ -1,29 +1,31 @@
 import React from "react";
 
-//styles
-import styles from "./SaleItem.module.css";
-
 //chart
 import ChangeChart from "./charts/ChangeChart";
 
 function SaleItem({ head }) {
   return (
-    <div className={styles.container}>
-      <input type="checkbox" />
-      <div className={styles.first}>
+    <div class="w-full grid text-xs lg:text-base grid-rows-1 grid-cols-12 justify-center justify-items-center items-center py-2.5 rounded-lg transition-all hover:bg-bg-color-secondary">
+      <div class="ml-2.5 justify-self-start col-span-4">
         {head ? (
-          <p className={styles.top}>Application</p>
+          <p class="font-semibold">Application</p>
         ) : (
           <>
-            <p className={styles.top}>Able Pro</p>
-            <p className={styles.sub}>Powerful Admin Theme</p>
+            <p class="font-semibold">Able Pro</p>
+            <p class="text-sm">Powerful Admin Theme</p>
           </>
         )}
       </div>
-      {head ? <p>Sales</p> : <p>{Math.floor(Math.random() * 10000)}</p>}
-      {head ? <p>Change</p> : <ChangeChart />}
-      {head ? <p>Avg Price</p> : <p>${Math.floor(Math.random() * 100)}</p>}
-      {head ? <p>Total</p> : <p>${Math.floor(Math.random() * 10000)}</p>}
+      <p class="col-span-2">
+        {head ? "Sales" : Math.floor(Math.random() * 10000)}
+      </p>
+      <p class="col-span-2">{head ? "Change" : <ChangeChart />}</p>
+      <p class="col-span-2">
+        {head ? "Avg Price " : Math.floor(Math.random() * 100)}
+      </p>
+      <p class="col-span-1">
+        {head ? "Total" : Math.floor(Math.random() * 10000)}
+      </p>
     </div>
   );
 }

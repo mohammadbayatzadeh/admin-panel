@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 //styles
 import styles from "./Layout.module.css";
-import Zoom from "react-reveal/Zoom";
 
 //elements
 import AppSec from "../elements/aside/AppSec";
@@ -54,9 +53,7 @@ function Layout({ children }) {
     <div className={styles.main_container} id={[mode]}>
       <header className={styles.header}>
         <a href="/ " className={styles.logo}>
-          <Zoom right cascade>
-            Admin Panel
-          </Zoom>
+          Admin Panel
         </a>
         <span onClick={() => themeHandler()}>
           {mode === "light" ? <Sun /> : <Moon />}
