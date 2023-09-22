@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from "react";
 
 //styles
-import styles from "./HomePage.module.css";
 import Loading from "../modules/Loading";
 
 //comps
@@ -14,13 +13,17 @@ const TeamSwiper = lazy(() => import("../elements/TeamSwiper"));
 
 function HomePage() {
   return (
-    <div className={styles.container}>
+    <div class="w-full felx flex-col h-max flex-wrap justify-betqeen items-start">
       <Suspense fallback={<Loading />}>
-        <div className={styles.topContainer}>
-          <Tag number="$32000" title="All Earning" />
-          <Tag number="290+" title="Page Views" />
-          <Tag number={145} title="Task Completed" />
-          <Tag number={500} title="Downloads" />
+        <div class="w-full flex h-max justify-between flex-wrap lg:flex-nowrap">
+          <div class="w-full flex flex-col flex-wrap sm:flex-row sm:flex-nowrap">
+            <Tag number="$32000" title="All Earning" />
+            <Tag number="290+" title="Page Views" />
+          </div>
+          <div class="w-full flex flex-col sm:flex-row ">
+            <Tag number={145} title="Task Completed" />
+            <Tag number={500} title="Downloads" />
+          </div>
         </div>
         <SaleAnal />
         <AppSales />

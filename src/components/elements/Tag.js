@@ -16,7 +16,7 @@ function Tag({ title }) {
     <div
       data-aos="fade-up"
       data-aos-delay={200}
-      class="w-1/4 mx-2 mb-5 h-30 bg-text-color-secondary text-text-color-primary rounded-xl p-4 transition duration-300 ease-in-out hover:scale-x-105"
+      class="lg:w-1/2 md:w-6/12 w-full mx-2 mb-5 h-30 bg-text-color-secondary text-text-color-primary rounded-xl p-4 transition duration-300 ease-in-out hover:scale-x-105"
     >
       <div class="w-full flex justify-between">
         <div>
