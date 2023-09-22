@@ -8,9 +8,6 @@ import { getItems } from "../../features/items/itemsSlice";
 import ItemCard from "../modules/ItemCard";
 import Loading from "../modules/Loading";
 
-//styles
-import styles from "./ManageItems.module.css";
-
 function ManageItems() {
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.items);
@@ -21,10 +18,14 @@ function ManageItems() {
 
   if (loading) return <Loading />;
   return (
-    <div className={styles.container}>
-      {data.map((item) => (
-        <ItemCard key={item.id} {...item} />
-      ))}
+    <div class=" w-full flex justify-around items-start flex-wrap">
+      {data.length > 0 ? (
+        data.map((item) => <ItemCard key={item.id} {...item} />)
+      ) : (
+        <p class="w-full bg-text-color-tertiary text-text-color-secondary text-center p-2 rounded-lg">
+          There is some error in fetching data ...
+        </p>
+      )}
     </div>
   );
 }
