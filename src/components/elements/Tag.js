@@ -1,13 +1,10 @@
-//styles
-import styles from "./Tag.module.css";
-
 //icons
 import { VscWatch } from "react-icons/vsc";
 
 //chart
 import { VictoryBar } from "victory";
 
-function Tag({ number, title }) {
+function Tag({ title }) {
   const data = [
     { quarter: "Jan", earnings: Math.random() * 1000 + 100 },
     { quarter: "Feb", earnings: Math.random() * 1000 + 100 },
@@ -16,16 +13,20 @@ function Tag({ number, title }) {
     { quarter: "Jun", earnings: Math.random() * 1000 + 100 },
   ];
   return (
-    <div className={styles.container} data-aos="fade-up" data-aos-delay={200}>
-      <div className={styles.row}>
+    <div
+      data-aos="fade-up"
+      data-aos-delay={200}
+      class="lg:w-1/2 md:w-6/12 w-full mx-2 mb-5 h-30 bg-text-color-secondary text-text-color-primary rounded-xl p-4 transition duration-300 ease-in-out hover:scale-x-105"
+    >
+      <div class="w-full flex justify-between">
         <div>
-          <p className={styles.number}>
+          <p class="text-xl">
             {title === "All Earning" && "$"}
             {Math.floor(Math.random() * 100000)}
           </p>
-          <p className={styles.title}>{title}</p>
+          <p class="text-base">{title}</p>
         </div>
-        <div className={styles.chart}>
+        <div class="w-12 h-12">
           <VictoryBar
             data={data}
             barWidth={60}
@@ -39,8 +40,8 @@ function Tag({ number, title }) {
           />
         </div>
       </div>
-      <span className={styles.line}></span>
-      <p className={styles.update}>
+      <span class="flex w-full h-px bg-text-color-primary my-2.5"></span>
+      <p class="flex items-center">
         <VscWatch />
         update : {Math.floor(Math.random() * 12 + 1)}:
         {Math.floor(Math.random() * 60 + 1)} am
