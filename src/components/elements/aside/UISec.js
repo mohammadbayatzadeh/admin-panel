@@ -1,6 +1,3 @@
-//styles
-import styles from "./Sec.module.css";
-
 //comps
 import AsideItem from "./AsideItem";
 
@@ -14,9 +11,9 @@ import {
 
 function UISec() {
   return (
-    <div className={styles.section}>
-      <p>UI Element</p>
-      <ul>
+    <div className="mb-7 ml-4 text-text-color-primary">
+      <p className="text-xl font-semibold mb-2.5">UI Element</p>
+      <ul className="list-none">
         <AsideItem
           title="Basic Components"
           list={["Alert", "Button", "Accordion"]}

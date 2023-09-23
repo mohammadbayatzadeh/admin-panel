@@ -1,6 +1,3 @@
-//styles
-import styles from "./Sec.module.css";
-
 //comps
 import AsideItem from "./AsideItem";
 
@@ -9,9 +6,9 @@ import { VscHome, VscMap, VscAccount, VscPackage } from "react-icons/vsc";
 
 function NavSec() {
   return (
-    <div className={styles.section}>
-      <p>Main </p>
-      <ul>
+    <div className="mb-7 ml-4 text-text-color-primary">
+      <p className="text-xl font-semibold mb-2.5">Main </p>
+      <ul className="list-none">
         <AsideItem title="Dashboard" icon={<VscHome />} href="/" />
         <AsideItem title="Map" icon={<VscMap />} href="/map" />
         <AsideItem

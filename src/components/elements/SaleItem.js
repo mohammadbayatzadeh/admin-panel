@@ -5,25 +5,25 @@ import ChangeChart from "./charts/ChangeChart";
 
 function SaleItem({ head }) {
   return (
-    <div class="w-full grid text-xs lg:text-base grid-rows-1 grid-cols-12 justify-center justify-items-center items-center py-2.5 rounded-lg transition-all hover:bg-bg-color-secondary">
-      <div class="ml-2.5 justify-self-start col-span-4">
+    <div className="w-full grid text-xs lg:text-base grid-rows-1 grid-cols-12 justify-center justify-items-center items-center py-2.5 rounded-lg transition-all hover:bg-bg-color-secondary">
+      <div className="ml-2.5 justify-self-start col-span-4">
         {head ? (
-          <p class="font-semibold">Application</p>
+          <p className="font-semibold">Application</p>
         ) : (
           <>
-            <p class="font-semibold">Able Pro</p>
-            <p class="text-sm">Powerful Admin Theme</p>
+            <p className="font-semibold">Able Pro</p>
+            <p className="text-sm">Powerful Admin Theme</p>
           </>
         )}
       </div>
-      <p class="col-span-2">
+      <p className="col-span-2">
         {head ? "Sales" : Math.floor(Math.random() * 10000)}
       </p>
-      <p class="col-span-2">{head ? "Change" : <ChangeChart />}</p>
-      <p class="col-span-2">
+      <p className="col-span-2">{head ? "Change" : <ChangeChart />}</p>
+      <p className="col-span-2">
         {head ? "Avg Price " : Math.floor(Math.random() * 100)}
       </p>
-      <p class="col-span-1">
+      <p className="col-span-1">
         {head ? "Total" : Math.floor(Math.random() * 10000)}
       </p>
     </div>
