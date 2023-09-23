@@ -1,6 +1,3 @@
-//styles
-import styles from "./Sec.module.css";
-
 //comps
 import AsideItem from "./AsideItem";
 
@@ -14,9 +11,9 @@ import {
 
 function FormSec() {
   return (
-    <div className={styles.section}>
-      <p>Forms</p>
-      <ul>
+    <div className="mb-7 ml-4 text-text-color-primary">
+      <p className="text-xl font-semibold mb-2.5">Forms</p>
+      <ul className="list-none">
         <AsideItem title="Form Components" icon={<VscOutput />} />
         <AsideItem title="Form Picker" icon={<VscPinned />} />
         <AsideItem title="Form Making" icon={<VscSymbolKeyword />} />
