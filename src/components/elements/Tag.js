@@ -13,7 +13,7 @@ function Tag({ title }) {
     { quarter: "Jun", earnings: Math.random() * 1000 + 100 },
   ];
   return (
-    <div className="lg:w-1/2 md:w-6/12 w-[calc(100vw - 20px)] mx-2 mb-5 h-30 bg-text-color-secondary text-text-color-primary rounded-xl p-4 transition duration-300 ease-in-out hover:scale-x-105">
+    <div className="lg:w-1/2 md:w-6/12 w-full mx-2 mb-5 h-30 bg-text-color-secondary text-text-color-primary rounded-xl p-4 transition duration-300 ease-in-out hover:scale-x-105">
       <div className="w-full flex justify-between">
         <div>
           <p className="text-xl">

@@ -134,8 +134,8 @@ function Layout({ children }) {
           <FormSec />
         </aside>
         <div
-          className={`flex md:min-w-[calc(100vw-180px)] mt-[70px] translate-x-[10px] md:ml-[190px] md:translate-x-0 pt-2.5 px-2.5 pb-[100px] min-h-fit transition-all overflow-y-scroll  scrollbar-none ${
-            !show ? "md:-translate-x-[180px] md:!min-w-[calc(100vw)]" : ""
+          className={`flex min-w-[calc(100vw)] md:min-w-[calc(100vw-180px)] mt-[70px] translate-x-[10px] md:ml-[190px] md:translate-x-0 pt-2.5 px-2.5 pb-[100px] min-h-fit transition-all overflow-y-scroll  scrollbar-none ${
+            !show ? "md:!-translate-x-[180px] md:!min-w-[calc(100vw)]" : ""
           }`}
         >
           {children}

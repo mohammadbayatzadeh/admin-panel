@@ -13,14 +13,14 @@ const TeamSwiper = lazy(() => import("../elements/TeamSwiper"));
 
 function HomePage() {
   return (
-    <div className="w-full felx flex-col h-max flex-wrap justify-betqeen items-start">
+    <div className="w-full flex flex-col h-max flex-wrap justify-between items-start">
       <Suspense fallback={<Loading />}>
-        <div className="w-full flex h-max justify-between flex-wrap lg:flex-nowrap">
+        <div className=" w-[calc(100%-20px)] sm:w-full flex h-max justify-between flex-wrap lg:flex-nowrap">
           <div className="w-full flex flex-col flex-wrap sm:flex-row sm:flex-nowrap">
             <Tag number="$32000" title="All Earning" />
             <Tag number="290+" title="Page Views" />
           </div>
-          <div className="w-full flex flex-col sm:flex-row ">
+          <div className="w-full flex flex-col flex-wrap sm:flex-row sm:flex-nowrap">
             <Tag number={145} title="Task Completed" />
             <Tag number={500} title="Downloads" />
           </div>
