@@ -23,6 +23,7 @@ function Layout({ children }) {
   const ref = useRef();
   const [mode, setMode] = useState("light");
   const storedMode = localStorage.getItem("mode");
+  const [show, setShow] = useState(true);
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
     setMode("light");
@@ -77,7 +78,7 @@ function Layout({ children }) {
         >
           <a
             className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer "
-            href="#"
+            href="/#"
           >
             <VscSearch />
           </a>
@@ -100,20 +101,48 @@ function Layout({ children }) {
           <VscSignOut />
         </NavbarButton>
       </header>
-      <div className={styles.container}>
-        <input type="checkbox" id="hamburger" name="hamburger" />
-        <label htmlFor="hamburger" className={styles.hamburger}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <aside className={styles.aside}>
+      <div className="flex w-full h-screen">
+        <div
+          className={`fixed top-[55px] left-[170px] w-[20px] h-[20px] flex justify-between flex-col items-center z-20 transition-all cursor-pointer ${
+            !show ? "left-5" : ""
+          }`}
+          onClick={() => setShow(!show)}
+        >
+          <span
+            className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all translate-y-2 rotate-45 ${
+              !show ? "!w-1/2 translate-y-1.5 translate-x-2 rotate-45" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all -rotate-45 ${
+              !show ? "rotate-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all opacity-0 ${
+              !show
+                ? "opacity-100 !w-1/2 -translate-y-1.5 translate-x-2 -rotate-45"
+                : ""
+            }`}
+          ></span>
+        </div>
+        <aside
+          className={`fixed translate-x-0 top-[50px] border-2 border-solid border-white rounded-r-xl py-6 w-[200px] h-[calc(100vh-10vh)] text-text-color-primary transition-all z-10 backdrop-blur overflow-y-scroll  scrollbar-none ${
+            !show ? "-translate-x-[180px]" : ""
+          }`}
+        >
           <NavSec />
           <UISec />
           <AppSec />
           <FormSec />
         </aside>
-        <div className={styles.body}>{children}</div>
+        <div
+          className={`flex w-full mt-[70px] ml-[200px] pt-2.5 pr-7 pl-2.5 pb-[100px] min-h-fit transition-all overflow-y-scroll  scrollbar-none ${
+            !show ? "-translate-x-[170px] min-w-[calc(99vw)]" : ""
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
