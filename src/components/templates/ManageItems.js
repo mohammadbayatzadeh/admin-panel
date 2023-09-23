@@ -18,10 +18,9 @@ function ManageItems() {
 
   if (loading) return <Loading />;
   return (
-    <div className=" w-full flex justify-between items-start flex-wrap">
+    <div className=" w-full mx-2 flex justify-between items-start flex-wrap">
       {data.length > 0 ? (
-        // data.map((item) => <ItemCard key={item.id} {...item} />)
-        <Loading />
+        data.map((item) => <ItemCard key={item.id} {...item} />)
       ) : (
         <p className="w-full bg-text-color-tertiary text-text-color-secondary text-center p-2 rounded-lg">
           There is some error in fetching data ...

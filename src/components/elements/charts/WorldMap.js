@@ -152,12 +152,7 @@ function WorldMap() {
   return (
     <div
       id="chartdiv"
-      style={{
-        width: "100%",
-        height: "600px",
-        backgroundColor: "#fff",
-        borderRadius: "10px",
-      }}
+      className="w-full h-[600px] bg-white rounded-lg mx-2"
     ></div>
   );
 }

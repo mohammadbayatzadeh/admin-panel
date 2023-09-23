@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-//styles
-import styles from "./Layout.module.css";
-
 //elements
 import AppSec from "../elements/aside/AppSec";
 import NavSec from "../elements/aside/NavSec";
@@ -103,14 +100,14 @@ function Layout({ children }) {
       </header>
       <div className="flex w-full h-screen">
         <div
-          className={`fixed top-[55px] left-[170px] w-[20px] h-[20px] flex justify-between flex-col items-center z-20 transition-all cursor-pointer ${
-            !show ? "left-5" : ""
+          className={`fixed top-[55px] left-[170px] w-[20px] h-[20px] flex justify-between flex-col items-center z-20 transition-all duration-700 cursor-pointer ${
+            !show ? "!left-5" : ""
           }`}
           onClick={() => setShow(!show)}
         >
           <span
             className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all translate-y-2 rotate-45 ${
-              !show ? "!w-1/2 translate-y-1.5 translate-x-2 rotate-45" : ""
+              !show ? "!w-1/2 !translate-y-1.5 translate-x-2 rotate-45" : ""
             }`}
           ></span>
           <span
@@ -128,7 +125,7 @@ function Layout({ children }) {
         </div>
         <aside
           className={`fixed translate-x-0 top-[50px] border-2 border-solid border-white rounded-r-xl py-6 w-[200px] h-[calc(100vh-10vh)] text-text-color-primary transition-all z-10 backdrop-blur overflow-y-scroll  scrollbar-none ${
-            !show ? "-translate-x-[180px]" : ""
+            !show ? "!-translate-x-[180px]" : ""
           }`}
         >
           <NavSec />
@@ -137,8 +134,8 @@ function Layout({ children }) {
           <FormSec />
         </aside>
         <div
-          className={`flex w-full mt-[70px] ml-[200px] pt-2.5 pr-7 pl-2.5 pb-[100px] min-h-fit transition-all overflow-y-scroll  scrollbar-none ${
-            !show ? "-translate-x-[170px] min-w-[calc(99vw)]" : ""
+          className={`flex md:min-w-[calc(100vw-180px)] mt-[70px] translate-x-[10px] md:ml-[190px] md:translate-x-0 pt-2.5 px-2.5 pb-[100px] min-h-fit transition-all overflow-y-scroll  scrollbar-none ${
+            !show ? "md:-translate-x-[180px] md:!min-w-[calc(100vw)]" : ""
           }`}
         >
           {children}

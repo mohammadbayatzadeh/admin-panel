@@ -6,9 +6,9 @@ import WordChart from "./charts/WordChart";
 
 function Contact() {
   return (
-    <div className="w-full rounded-lg h-fit bg-text-color-secondary text-text-color-primary">
+    <div className="w-full mx-2 rounded-lg h-fit bg-text-color-secondary text-text-color-primary">
       <div className="flex w-full lg:flex-row flex-col">
-        <div className="lg:w-5/12 w-full flex flex-col items-center justify-start bg-gradient-to-r from-bg-color-primary to-text-color-tertiary text-text-color-secondary lg:rounded-l-lg rounded-t-lg">
+        <div className="lg:w-5/12 w-full flex flex-col items-center justify-start bg-gradient-to-r from-bg-color-primary to-text-color-tertiary text-text-color-secondary lg:rounded-l-lg lg:rounded-tr-none rounded-t-lg">
           <img
             src={require("../../data/users/profile.jpeg")}
             alt="mohammad bayatzadeh"
