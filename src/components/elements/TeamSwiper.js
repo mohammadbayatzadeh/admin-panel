@@ -31,7 +31,7 @@ const TeamSwiperItem = () => {
 
 export default function TeamSwiper() {
   return (
-    <div className="w-full h-full rounded-lg bg-text-color-secondary text-text-color-primary p-4">
+    <div className="w-[calc(100%-15px)] mx-2  h-full rounded-lg bg-text-color-secondary text-text-color-primary p-4">
       <p className="bg-text-color-ssecondary text-text-color-primary mb-3">
         Team Members
       </p>
