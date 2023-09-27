@@ -55,7 +55,7 @@ function Layout({ children }) {
       <header className="fixed flex items-center w-full bg-bg-color-primary px-2.5">
         <a
           href="/ "
-          className="no-underline text-3xl text-text-color-secondary mt-2.5 mb-5 ml-1 mr-auto"
+          className="no-underline text-sm sm:text-3xl text-text-color-secondary mt-2.5 mb-5 ml-1 mr-auto"
         >
           Admin Panel
         </a>
@@ -85,13 +85,13 @@ function Layout({ children }) {
             className="w-0 border-none outline-none m-0 p-0 rounded-r-md transition-all text-black focus:p-1 focus:w-[100px]"
           />
         </div>
-        <NavbarButton>
+        <NavbarButton extClass=" !hidden md:!flex">
           <p className="absolute translate-x-1.5 -translate-y-1 w-[12px] h-[12px] text-center bg-text-color-tertiary rounded-full text-[7px]">
             {Math.floor(Math.random() * 10)}
           </p>
           <VscBellDot />
         </NavbarButton>
-        <NavbarButton>
+        <NavbarButton extClass=" !hidden md:!flex">
           <VscSettingsGear />
         </NavbarButton>
         <NavbarButton>
@@ -147,18 +147,20 @@ function Layout({ children }) {
 
 export default Layout;
 
-const NavbarButton = ({ href, children }) => {
+const NavbarButton = ({ href, children, extClass }) => {
   if (href)
     return (
       <a
-        className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary"
+        className={`flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary ${extClass}`}
         href={href}
       >
         {children}
       </a>
     );
   return (
-    <div className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary">
+    <div
+      className={`flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary ${extClass}`}
+    >
       {children}
     </div>
   );
