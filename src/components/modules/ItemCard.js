@@ -21,7 +21,9 @@ function ItemCard({ title, image, category, price }) {
         </h2>
         <button
           onClick={() => setSelect(!select)}
-          className="relative top-[100px] opacity-0 py-2.5 px-8 mt-4 text-text-color-secondary no-underline bg-bg-color-primary rounded-3xl uppercase tracking-wide duration-500 group-hover:-top-[15px] group-hover:opacity-100"
+          className={`relative ${
+            select ? "-top-[15px] opacity-100" : "top-[100px]"
+          } opacity-0 py-2.5 px-8 mt-4 text-text-color-secondary no-underline bg-bg-color-primary rounded-3xl uppercase tracking-wide duration-500 group-hover:-top-[15px] group-hover:opacity-100`}
         >
           {select ? "selected" : "ADD"}
         </button>
