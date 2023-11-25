@@ -16,7 +16,7 @@ function ItemCard({ title, image, category, price }) {
           {shorten(title)}
         </h3>
         <h2 className="text-xl text-text-color-primary font-bold tracking-wide">
-          {+splitPrice[0]}.<small>{splitPrice[1]}</small> €
+          {+splitPrice[0]}.{+splitPrice[1]}€
         </h2>
         <a
           href="/#"
