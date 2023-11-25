@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import ItemCard from "./ItemCard";
 import { seperatePrice, shorten } from "../../functions/functions";
 import "@testing-library/jest-dom";
@@ -13,6 +13,7 @@ const cardprops = {
 describe("card Component", () => {
   test("show all properties ", () => {
     render(<ItemCard {...cardprops} />);
+
     const image = screen.getByRole("img");
     expect(image.src).toContain(cardprops.image);
     expect(image).toBeInTheDocument();
@@ -27,5 +28,12 @@ describe("card Component", () => {
 
     const category = screen.getByText(cardprops.category);
     expect(category).toBeInTheDocument();
+
+    const button = screen.getByRole("button");
+    expect(button).toHaveTextContent("ADD");
+    fireEvent.click(button);
+    expect(button).toHaveTextContent("selected");
+    fireEvent.click(button);
+    expect(button).toHaveTextContent("ADD");
   });
 });
