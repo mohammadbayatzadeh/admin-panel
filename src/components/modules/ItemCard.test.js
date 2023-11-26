@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import ItemCard from "./ItemCard";
 import { seperatePrice, shorten } from "../../functions/functions";
 import "@testing-library/jest-dom";
@@ -31,9 +31,13 @@ describe("card Component", () => {
 
     const button = screen.getByRole("button");
     expect(button).toHaveTextContent("ADD");
-    fireEvent.click(button);
+    act(() => {
+      fireEvent.click(button);
+    });
     expect(button).toHaveTextContent("selected");
-    fireEvent.click(button);
+    act(() => {
+      fireEvent.click(button);
+    });
     expect(button).toHaveTextContent("ADD");
   });
 });
