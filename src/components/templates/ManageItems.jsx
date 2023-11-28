@@ -17,6 +17,7 @@ function ManageItems() {
 
   useEffect(() => {
     dispatch(getItems());
+    console.log({ data, loading });
   }, []);
 
   useEffect(() => {

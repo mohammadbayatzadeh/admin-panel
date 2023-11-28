@@ -16,6 +16,9 @@ import {
   VscSearch,
 } from "react-icons/vsc";
 
+//profile
+import profile from "../../data/users/profile.jpeg";
+
 function Layout({ children }) {
   const ref = useRef();
   const [mode, setMode] = useState("light");
@@ -63,11 +66,11 @@ function Layout({ children }) {
           {mode === "light" ? <Sun /> : <Moon />}
         </span>
         <NavbarButton href="/contact">
-          {/* <img
-            src={require(`../../data/users/profile.jpeg`)}
+          <img
+            src={profile}
             alt={"profile"}
             className="w-full h-full rounded-lg"
-          /> */}
+          />
         </NavbarButton>
         <div
           className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
