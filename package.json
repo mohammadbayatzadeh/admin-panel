@@ -46,10 +46,16 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "vite": "^5.0.2"
+=======
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "tailwind-scrollbar": "^3.0.5",
+    "tailwindcss": "^3.3.3"
+>>>>>>> parent of 2832f98 (mocking rest api calls)
   }
 }
