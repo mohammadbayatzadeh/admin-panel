@@ -9,11 +9,11 @@ function Contact() {
     <div className="w-full mx-2 rounded-lg h-fit bg-text-color-secondary text-text-color-primary">
       <div className="flex w-full lg:flex-row flex-col">
         <div className="lg:w-5/12 w-full flex flex-col items-center justify-start bg-gradient-to-r from-bg-color-primary to-text-color-tertiary text-text-color-secondary lg:rounded-l-lg lg:rounded-tr-none rounded-t-lg">
-          <img
+          {/* <img
             src={require("../../data/users/profile.jpeg")}
             alt="mohammad bayatzadeh"
             className="w-[200px] h-[200px] rounded-3xl mt-8 border-2 border-solid border-white"
-          />
+          /> */}
           <p className="mt-2.5">Mohammad Bayatzadeh</p>
           <p className="mt-2.5">Front-End developer</p>
         </div>

@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 
 function App() {
   useEffect(() => {
-    document.title = "Admin Panel ";
+    document.title = "Admin Panel";
   }, []);
 
   return (

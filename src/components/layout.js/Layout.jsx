@@ -63,11 +63,11 @@ function Layout({ children }) {
           {mode === "light" ? <Sun /> : <Moon />}
         </span>
         <NavbarButton href="/contact">
-          <img
+          {/* <img
             src={require(`../../data/users/profile.jpeg`)}
             alt={"profile"}
             className="w-full h-full rounded-lg"
-          />
+          /> */}
         </NavbarButton>
         <div
           className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
