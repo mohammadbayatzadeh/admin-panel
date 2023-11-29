@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 //layout
 import Layout from "./components/layout.js/Layout";
 
@@ -12,10 +10,6 @@ import Store from "./app/store";
 import { Provider } from "react-redux";
 
 function App() {
-  useEffect(() => {
-    document.title = "Admin Panel";
-  }, []);
-
   return (
     <Provider store={Store}>
       <Layout>

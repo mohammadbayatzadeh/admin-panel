@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 
 //styles
 import Loading from "../modules/Loading";
@@ -12,6 +12,9 @@ const AppSales = lazy(() => import("../modules/AppSales"));
 const TeamSwiper = lazy(() => import("../elements/TeamSwiper"));
 
 function HomePage() {
+  useEffect(() => {
+    document.title = "Admin Panel";
+  }, []);
   return (
     <div className="w-full flex flex-col h-max flex-wrap justify-between items-start">
       <Suspense fallback={<Loading />}>

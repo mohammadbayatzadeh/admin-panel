@@ -10,6 +10,9 @@ import Loading from "../modules/Loading";
 import Filter from "../elements/Filter";
 
 function ManageItems() {
+  useEffect(() => {
+    document.title = "Manage Panel";
+  }, []);
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.items);
   const [category, setCategory] = useState("all");

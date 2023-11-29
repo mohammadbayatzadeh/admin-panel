@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //temps
-import Contact from '../elements/Contact'
+import Contact from "../elements/Contact";
 
 function ContactPage() {
-  return <Contact />
+  useEffect(() => {
+    document.title = "Contact Panel";
+  }, []);
+  return <Contact />;
 }
 
 export default ContactPage;

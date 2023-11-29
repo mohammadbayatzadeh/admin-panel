@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 //icons
 import { VscArrowSmallDown } from "react-icons/vsc";
 
 function AsideItem({ title, list = [], icon, href = "#" }) {
   const [isShow, setIsShow] = useState(false);
+  const contentEl = useRef();
+
   return (
     <li
       onClick={() => setIsShow(!isShow)}
@@ -14,7 +16,7 @@ function AsideItem({ title, list = [], icon, href = "#" }) {
         href={href}
         className="flex items-start z-1 py-1 rounded-l-md text-text-color-primary no-underline transition-all "
       >
-        <span className={title === "Animations" ? "animate-spin" : null}>
+        <span className={title === "Animations"  || title ==='Icons' ? "animate-spin" : null}>
           {icon}
         </span>
         <p className="!text-sm leading-3 ml-1 mr-auto transition-all group-hover:translate-x-1">
@@ -27,18 +29,18 @@ function AsideItem({ title, list = [], icon, href = "#" }) {
           {list.map((item, index) => (
             <div
               key={index}
+              style={
+                isShow
+                  ? { height: contentEl.current.scrollHeight + 14 }
+                  : { height: "0px" }
+              }
+              ref={contentEl}
               className={`
-            pl-5 absolute invisible transition-all 
-            ${isShow ? "flex relative !visible" : ""}
+            pl-3 transition-all h-0 overflow-hidden
+            ${isShow ? " h-auto" : ""}
             `}
             >
-              <a
-                key={item}
-                href={href}
-                className={`w-full py-1 my-1 !text-xs opacity-0 -translate-x-5 transition-all ${
-                  isShow ? "opacity-100 translate-x-0" : ""
-                }`}
-              >
+              <a key={item} href={href} className="w-full !text-xs">
                 {`> ${item}`}
               </a>
             </div>
