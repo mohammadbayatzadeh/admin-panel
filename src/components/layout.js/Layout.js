@@ -106,7 +106,7 @@ function Layout({ children }) {
           onClick={() => setShow(!show)}
         >
           <span
-            className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all translate-y-2 rotate-45 ${
+            className={`w-full h-0.5 bg-text-color-primary rounded-sm transition-all translate-y-[9px] rotate-45 ${
               !show ? "!w-1/2 !translate-y-1.5 translate-x-2 rotate-45" : ""
             }`}
           ></span>
