@@ -10,6 +10,7 @@ const MapPage = lazy(() => import("./components/templates/MapPage"));
 const ContactPage = lazy(() => import("./components/templates/ContactPage"));
 const ManageItems = lazy(() => import("./components/templates/ManageItems"));
 const LoginPage = lazy(() => import("./components/templates/LoginPage"));
+const Page404 = lazy(() => import("./components/templates/Page404"));
 
 function RoutesMap() {
   return (
@@ -20,6 +21,7 @@ function RoutesMap() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/manage-items" element={<ManageItems />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Suspense>
   );

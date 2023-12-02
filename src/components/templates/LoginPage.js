@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 function LoginPage() {
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+  const changeHandler = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="flex flex-col justify-center mx-auto">
       <div className="w-full bg-text-color-secondary rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
@@ -8,7 +19,7 @@ function LoginPage() {
           <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl ">
             Sign in to your account
           </h1>
-          <form className="space-y-4 md:space-y-6" action="#">
+          <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
             <div>
               <label
                 htmlFor="email"
@@ -19,6 +30,8 @@ function LoginPage() {
               <input
                 type="email"
                 name="email"
+                value={form.email}
+                onChange={changeHandler}
                 className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
                 placeholder="name@company.com"
               />
@@ -33,6 +46,8 @@ function LoginPage() {
               <input
                 type="password"
                 name="password"
+                value={form.password}
+                onChange={changeHandler}
                 placeholder="••••••••"
                 className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
               />
@@ -69,7 +84,7 @@ function LoginPage() {
             <p className="text-sm font-light text-gray-500 ">
               Don’t have an account yet?{" "}
               <a
-                href="#"
+                href="/register"
                 className="font-medium text-text-color-tertiary hover:underline"
               >
                 Sign up
