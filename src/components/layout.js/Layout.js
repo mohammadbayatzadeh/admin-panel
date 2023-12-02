@@ -21,10 +21,12 @@ function Layout({ children }) {
   const [mode, setMode] = useState("light");
   const storedMode = localStorage.getItem("mode");
   const [show, setShow] = useState(true);
+
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
     setMode("light");
   }
+
   useEffect(() => {
     setMode(storedMode);
   }, []);
@@ -73,10 +75,7 @@ function Layout({ children }) {
           className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
           onClick={() => searchHandler()}
         >
-          <a
-            className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer "
-            href="/#"
-          >
+          <a className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer ">
             <VscSearch />
           </a>
           <input
@@ -147,7 +146,7 @@ function Layout({ children }) {
 
 export default Layout;
 
-const NavbarButton = ({ href, children, extClass }) => {
+const NavbarButton = ({ href = false, children, extClass }) => {
   if (href)
     return (
       <a

@@ -1,8 +1,9 @@
-module.exports = {
-  preset: "ts-jest/presets/js-with-ts",
+/** @type {import('jest').Config} */
+const config = {
   testEnvironment: "jsdom",
   transform: {
-    "\\.[jt]sx?$": "esbuild-jest",
+    "^.+\\.tsx?$": "esbuild-jest",
   },
-  
 };
+
+module.exports = config;

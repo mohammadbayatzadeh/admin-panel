@@ -27,11 +27,16 @@
     "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!spacetime)"
     ]
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.8",
+    "esbuild-jest": "^0.5.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   },
   "browserslist": {
     "production": [
@@ -44,14 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!spacetime)"
-    ]
-  },
-  "devDependencies": {
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
   }
 }
