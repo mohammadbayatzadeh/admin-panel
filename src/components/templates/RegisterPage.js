@@ -56,7 +56,7 @@ function RegisterPage() {
 
             <button
               type="submit"
-              className="w-full text-text-color-secondary bg-bg-color-primary hover:bg-primary-700  focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:!opacity-100  focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             >
               Sign up
             </button>
