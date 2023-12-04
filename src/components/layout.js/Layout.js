@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 //elements
 import AppSec from "../elements/aside/AppSec";
@@ -21,7 +22,8 @@ function Layout({ children }) {
   const [mode, setMode] = useState("light");
   const storedMode = localStorage.getItem("mode");
   const [show, setShow] = useState(true);
-
+  const { pathname } = useLocation();
+  console.log(pathname);
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
     setMode("light");
@@ -55,12 +57,12 @@ function Layout({ children }) {
       id={[mode]}
     >
       <header className="fixed flex items-center w-full bg-bg-color-primary px-2.5">
-        <a
-          href="/ "
+        <Link
+          to="/"
           className="no-underline text-sm sm:text-3xl text-text-color-secondary mt-2.5 mb-5 ml-1 mr-auto"
         >
           Admin Panel
-        </a>
+        </Link>
         <span onClick={() => themeHandler()}>
           {mode === "light" ? <Sun /> : <Moon />}
         </span>
@@ -75,9 +77,9 @@ function Layout({ children }) {
           className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
           onClick={() => searchHandler()}
         >
-          <a className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer ">
+          <Link className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer ">
             <VscSearch />
-          </a>
+          </Link>
           <input
             ref={ref}
             onChange={(e) => (ref.current.value = e.target.value)}
@@ -149,12 +151,12 @@ export default Layout;
 const NavbarButton = ({ href = false, children, extClass }) => {
   if (href)
     return (
-      <a
+      <Link
         className={`flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary ${extClass}`}
-        href={href}
+        to={href}
       >
         {children}
-      </a>
+      </Link>
     );
   return (
     <div

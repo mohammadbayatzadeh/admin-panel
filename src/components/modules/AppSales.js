@@ -3,6 +3,7 @@ import React from "react";
 //comps
 import SaleItem from "../elements/SaleItem";
 import Message from "../elements/Message";
+import { Link } from "react-router-dom";
 
 function AppSales() {
   return (
@@ -16,12 +17,12 @@ function AppSales() {
         <SaleItem />
         <SaleItem />
         <SaleItem />
-        <a
-          href="/#"
+        <Link
+          to="/#"
           className="no-underline block text-text-color-tertiary text-center"
         >
           View all Projects
-        </a>
+        </Link>
       </div>
       <div className="lg:w-1/2 w-full mx-2 mb-5 rounded-lg bg-text-color-secondary text-text-color-primary p-4">
         <p className="font-semibold">User Activity</p>
@@ -29,12 +30,12 @@ function AppSales() {
         <Message />
         <Message />
         <Message />
-        <a
-          href="/#"
+        <Link
+          to="/#"
           className="no-underline block text-text-color-tertiary text-center mt-auto"
         >
           View all Projects
-        </a>
+        </Link>
       </div>
     </div>
   );

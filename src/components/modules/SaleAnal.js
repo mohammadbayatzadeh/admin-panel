@@ -1,6 +1,7 @@
 //charts
 import LineChart from "../elements/charts/lineChart";
 import CircleChart from "../elements/charts/circleChart";
+import { Link } from "react-router-dom";
 
 function SaleAnal() {
   return (
@@ -9,9 +10,9 @@ function SaleAnal() {
         <p className="font-bold">Sales Analytics</p>
         <p>
           For more details about usage, please refer{" "}
-          <a href="/#" className="text-text-color-tertiary no-underline">
+          <Link to="/#" className="text-text-color-tertiary no-underline">
             amCharts{" "}
-          </a>
+          </Link>
           licences.
         </p>
         <LineChart />
@@ -19,9 +20,9 @@ function SaleAnal() {
       <div className="lg:w-1/3 w-full h-[600px] mx-2 mb-5 rounded-lg bg-text-color-secondary text-text-color-primary p-4 flex flex-col items-center">
         <p>Project Risk</p>
         <CircleChart />
-        <a href="/#" className="text-text-color-tertiary no-underline">
+        <Link to="/#" className="text-text-color-tertiary no-underline">
           Change your risk
-        </a>
+        </Link>
         <span className="flex w-full h-px bg-text-color-primary my-2.5"></span>
         <div className="w-full flex justify-between">
           <div className="w-1/2 p-2.5 text-center">

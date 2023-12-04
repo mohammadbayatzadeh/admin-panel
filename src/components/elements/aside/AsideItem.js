@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 
 //icons
 import { VscArrowSmallDown } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 function AsideItem({ title, list = [], icon, href = "#" }) {
   const [isShow, setIsShow] = useState(false);
@@ -12,18 +13,22 @@ function AsideItem({ title, list = [], icon, href = "#" }) {
       onClick={() => setIsShow(!isShow)}
       className="group flex flex-col text-left mt-2.5 "
     >
-      <a
-        href={href}
+      <Link
+        to={href}
         className="flex items-start z-1 py-1 rounded-l-md text-text-color-primary no-underline transition-all "
       >
-        <span className={title === "Animations"  || title ==='Icons' ? "animate-spin" : null}>
+        <span
+          className={
+            title === "Animations" || title === "Icons" ? "animate-spin" : null
+          }
+        >
           {icon}
         </span>
         <p className="!text-sm leading-3 ml-1 mr-auto transition-all group-hover:translate-x-1">
           {title}
         </p>
         {list.length > 0 && <VscArrowSmallDown />}
-      </a>
+      </Link>
       {list.length > 0 && (
         <>
           {list.map((item, index) => (
@@ -40,9 +45,9 @@ function AsideItem({ title, list = [], icon, href = "#" }) {
             ${isShow ? " h-auto" : ""}
             `}
             >
-              <a key={item} href={href} className="w-full !text-xs">
+              <Link key={item} to={href} className="w-full !text-xs">
                 {`> ${item}`}
-              </a>
+              </Link>
             </div>
           ))}
         </>
