@@ -5,12 +5,16 @@ import { Route, Routes } from "react-router-dom";
 import Loading from "./components/modules/Loading";
 
 //templates
-const HomePage = lazy(() => import("./components/templates/HomePage"));
-const MapPage = lazy(() => import("./components/templates/MapPage"));
-const ContactPage = lazy(() => import("./components/templates/ContactPage"));
-const ManageItems = lazy(() => import("./components/templates/ManageItems"));
-const LoginPage = lazy(() => import("./components/templates/LoginPage"));
-const RegisterPage = lazy(() => import("./components/templates/RegisterPage"));
+const HomePage = lazy(() => import("./components/templates/pages/HomePage"));
+const MapPage = lazy(() => import("./components/templates/pages/MapPage"));
+const ContactPage = lazy(() =>
+  import("./components/templates/pages/ContactPage")
+);
+const ManageItems = lazy(() =>
+  import("./components/templates/pages/ManageItems")
+);
+const LoginPage = lazy(() => import("./components/templates/auth/LoginPage"));
+const RegisterPage = lazy(() => import("./components/templates/auth/RegisterPage"));
 const Page404 = lazy(() => import("./components/templates/Page404"));
 
 function RoutesMap() {

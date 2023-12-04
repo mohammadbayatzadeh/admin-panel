@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
-import { getItems } from "../../features/items/itemsSlice";
+import { getItems } from "../../../features/items/itemsSlice";
 
 //comps
-import ItemCard from "../modules/ItemCard";
-import Loading from "../modules/Loading";
-import Filter from "../elements/Filter";
+import ItemCard from "../../modules/ItemCard";
+import Loading from "../../modules/Loading";
+import Filter from "../../elements/Filter";
 
 function ManageItems() {
   useEffect(() => {

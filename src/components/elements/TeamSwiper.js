@@ -10,9 +10,11 @@ import "swiper/css/pagination";
 
 export default function TeamSwiper() {
   const row = [];
+
   for (let i = 0; i < 10; i++) {
     row.push(i);
   }
+
   return (
     <div className="w-[calc(100%-15px)] mx-2  h-full rounded-lg bg-text-color-secondary text-text-color-primary p-4">
       <p className="bg-text-color-ssecondary text-text-color-primary mb-3">

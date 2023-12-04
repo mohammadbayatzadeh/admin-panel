@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 //temps
-import Contact from "../elements/Contact";
+import Contact from "../../modules/Contact";
 
 function ContactPage() {
   useEffect(() => {

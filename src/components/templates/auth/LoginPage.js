@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 //elements
-import AuthInput from "../elements/AuthInput";
+import AuthInput from "../../elements/AuthInput";
+import { helper } from "../../../utils/functions";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -11,8 +12,10 @@ function LoginPage() {
   });
 
   const submitHandler = (e) => {
+    console.log(form);
     e.preventDefault();
   };
+
   return (
     <div className="flex flex-col justify-center mx-auto">
       <div className="w-full bg-text-color-secondary rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
@@ -33,7 +36,6 @@ function LoginPage() {
               setForm={setForm}
               placeholder="••••••••"
             />
-
             <div className="flex items-center justify-between">
               <div className="flex items-start">
                 <div className="flex items-center h-5">
@@ -44,7 +46,7 @@ function LoginPage() {
                     className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
                   />
                 </div>
-                <div className="ml-3 text-sm">
+                <div className="text-sm">
                   <label htmlFor="remember" className="text-gray-500">
                     Remember me
                   </label>
@@ -59,6 +61,9 @@ function LoginPage() {
             </div>
             <button
               type="submit"
+              disabled={
+                helper.isEmpty(form.email) || helper.isEmpty(form.password)
+              }
               className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:!opacity-100 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             >
               Sign in

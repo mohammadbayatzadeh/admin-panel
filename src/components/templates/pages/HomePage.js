@@ -1,15 +1,15 @@
 import React, { Suspense, lazy, useEffect } from "react";
 
 //styles
-import Loading from "../modules/Loading";
+import Loading from "../../modules/Loading";
 
 //comps
-const Tag = lazy(() => import("../elements/Tag"));
-const SaleAnal = lazy(() => import("../modules/SaleAnal"));
-const AppSales = lazy(() => import("../modules/AppSales"));
+const Tag = lazy(() => import("../../elements/Tag"));
+const SaleAnal = lazy(() => import("../../modules/SaleAnal"));
+const AppSales = lazy(() => import("../../modules/AppSales"));
 
 //swiper
-const TeamSwiper = lazy(() => import("../elements/TeamSwiper"));
+const TeamSwiper = lazy(() => import("../../elements/TeamSwiper"));
 
 function HomePage() {
   useEffect(() => {

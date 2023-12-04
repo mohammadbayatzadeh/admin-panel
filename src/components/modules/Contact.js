@@ -1,7 +1,7 @@
 import React from "react";
 
 //chart
-import WordChart from "./charts/WordChart";
+import WordChart from "../elements/charts/WordChart";
 
 function Contact() {
   return (

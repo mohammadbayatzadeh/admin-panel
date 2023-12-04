@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 //functions
-import { helper } from "../../functions/functions";
+import { helper } from "../../utils/functions";
 
 function ItemCard({ title, image, category, price }) {
   const [select, setSelect] = useState(false);

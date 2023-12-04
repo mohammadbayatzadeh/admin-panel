@@ -1,10 +1,12 @@
 const { render, screen, fireEvent } = require("@testing-library/react");
+import { BrowserRouter } from "react-router-dom";
 import LoginPage from "./LoginPage";
 
 const getElement = (elm) => {
   const elms = {
     email: screen.getByPlaceholderText("name@company.com"),
     password: screen.getByPlaceholderText("••••••••"),
+    button: screen.getByRole("button", { type: "submit" }),
   };
   return elms[elm];
 };
@@ -14,16 +16,32 @@ const typeElement = (value, elm) => {
 };
 
 describe("loginPage input, button check", () => {
-  beforeEach(() => render(<LoginPage />));
+  beforeEach(() =>
+    render(
+      <BrowserRouter>
+        <LoginPage />
+      </BrowserRouter>
+    )
+  );
+
   test("inputs must initialy empty", () => {
     expect(getElement("email").value).toBe("");
     expect(getElement("password").value).toBe("");
   });
+
   test("input type", () => {
     typeElement("salam", "email");
     expect(getElement("email").value).toBe("salam");
-
     typeElement("123456", "password");
     expect(getElement("password").value).toBe("123456");
+  });
+
+  test("button must be disable", () => {
+    expect(getElement("button").disabled).toBeTruthy();
+  });
+  test("button must enable with filled inputs", () => {
+    typeElement("salam", "email");
+    typeElement("123456", "password");
+    expect(getElement("button").disabled).toBeFalsy();
   });
 });

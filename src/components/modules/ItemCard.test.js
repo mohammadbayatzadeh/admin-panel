@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import ItemCard from "./ItemCard";
-import { seperatePrice, shorten } from "../../functions/functions";
 import "@testing-library/jest-dom";
+import { helper } from "../../utils/functions";
 
 const cardprops = {
   title: "product 11",
@@ -18,10 +18,10 @@ describe("card Component", () => {
     expect(image.src).toContain(cardprops.image);
     expect(image).toBeInTheDocument();
 
-    const title = screen.getByText(shorten(cardprops.title));
+    const title = screen.getByText(helper.shorten(cardprops.title));
     expect(title).toBeInTheDocument();
 
-    const splitPrice = seperatePrice(`${cardprops.price}`);
+    const splitPrice = helper.seperatePrice(`${cardprops.price}`);
 
     const price = screen.getByText(`${splitPrice[0]}.${splitPrice[1]}€`);
     expect(price).toBeInTheDocument();

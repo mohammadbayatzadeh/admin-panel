@@ -12,7 +12,7 @@ function AuthInput({ name, form, placeholder, setForm }) {
         Your email
       </label>
       <input
-        type={name}
+        type={name === "email" ? "text" : "password"}
         name={name}
         value={form[name]}
         onChange={changeHandler}

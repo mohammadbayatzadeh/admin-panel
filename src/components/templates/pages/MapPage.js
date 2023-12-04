@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 //chart
-import WorldMap from "../elements/charts/WorldMap";
+import WorldMap from "../../elements/charts/WorldMap";
 
 function MapPage() {
   useEffect(() => {

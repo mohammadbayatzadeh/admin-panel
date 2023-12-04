@@ -9,8 +9,7 @@ import UISec from "../elements/aside/UISec";
 import FormSec from "../elements/aside/FormSec";
 
 //icons
-import Sun from "../icons/Sun";
-import Moon from "../icons/Moon";
+import { GiMoonBats, GiSundial } from "react-icons/gi";
 import {
   VscSignOut,
   VscSettingsGear,
@@ -24,7 +23,7 @@ function Layout({ children }) {
   const { pathname } = useLocation();
   const ref = useRef();
   const storedMode = localStorage.getItem("mode");
-  
+
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
     setMode("light");
@@ -64,8 +63,8 @@ function Layout({ children }) {
         >
           Admin Panel
         </Link>
-        <span onClick={() => themeHandler()} className='cursor-pointer'>
-          {mode === "light" ? <Sun /> : <Moon />}
+        <span onClick={() => themeHandler()} className="cursor-pointer">
+          {mode === "light" ? <GiSundial className="text-3xl text-yellow-500" /> : <GiMoonBats className="text-3xl " />}
         </span>
         {pathname !== "/login" && pathname !== "/register" && (
           <>
@@ -152,5 +151,3 @@ function Layout({ children }) {
 }
 
 export default Layout;
-
-
