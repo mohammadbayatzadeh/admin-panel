@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+//elements
+import AuthInput from "../elements/AuthInput";
+
 function LoginPage() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  const changeHandler = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -21,38 +21,19 @@ function LoginPage() {
             Sign in to your account
           </h1>
           <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
-            <div>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-bg-color-primary "
-              >
-                Your email
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={changeHandler}
-                className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
-                placeholder="name@company.com"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium text-bg-color-primary "
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                value={form.password}
-                onChange={changeHandler}
-                placeholder="••••••••"
-                className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
-              />
-            </div>
+            <AuthInput
+              name="email"
+              form={form}
+              setForm={setForm}
+              placeholder="name@company.com"
+            />
+            <AuthInput
+              name="password"
+              form={form}
+              setForm={setForm}
+              placeholder="••••••••"
+            />
+
             <div className="flex items-center justify-between">
               <div className="flex items-start">
                 <div className="flex items-center h-5">
