@@ -18,12 +18,12 @@ import {
 } from "react-icons/vsc";
 
 function Layout({ children }) {
-  const ref = useRef();
   const [mode, setMode] = useState("light");
-  const storedMode = localStorage.getItem("mode");
   const [show, setShow] = useState(true);
   const { pathname } = useLocation();
-  console.log(pathname);
+  const ref = useRef();
+  const storedMode = localStorage.getItem("mode");
+  
   if (storedMode == null) {
     localStorage.setItem("mode", "light");
     setMode("light");
@@ -63,41 +63,45 @@ function Layout({ children }) {
         >
           Admin Panel
         </Link>
-        <span onClick={() => themeHandler()}>
+        <span onClick={() => themeHandler()} className='cursor-pointer'>
           {mode === "light" ? <Sun /> : <Moon />}
         </span>
-        <NavbarButton href="/contact">
-          <img
-            src={require(`../../data/users/profile.jpeg`)}
-            alt={"profile"}
-            className="w-full h-full rounded-lg"
-          />
-        </NavbarButton>
-        <div
-          className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
-          onClick={() => searchHandler()}
-        >
-          <Link className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer ">
-            <VscSearch />
-          </Link>
-          <input
-            ref={ref}
-            onChange={(e) => (ref.current.value = e.target.value)}
-            className="w-0 border-none outline-none m-0 p-0 rounded-r-md transition-all text-black focus:p-1 focus:w-[100px]"
-          />
-        </div>
-        <NavbarButton extClass=" !hidden md:!flex">
-          <p className="absolute translate-x-1.5 -translate-y-1 w-[12px] h-[12px] text-center bg-text-color-tertiary rounded-full text-[7px]">
-            {Math.floor(Math.random() * 10)}
-          </p>
-          <VscBellDot />
-        </NavbarButton>
-        <NavbarButton extClass=" !hidden md:!flex">
-          <VscSettingsGear />
-        </NavbarButton>
-        <NavbarButton>
-          <VscSignOut />
-        </NavbarButton>
+        {pathname !== "/login" && pathname !== "/register" && (
+          <>
+            <NavbarButton href="/contact">
+              <img
+                src={require(`../../data/users/profile.jpeg`)}
+                alt={"profile"}
+                className="w-full h-full rounded-lg"
+              />
+            </NavbarButton>
+            <div
+              className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
+              onClick={() => searchHandler()}
+            >
+              <Link className="flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-0 cursor-pointer ">
+                <VscSearch />
+              </Link>
+              <input
+                ref={ref}
+                onChange={(e) => (ref.current.value = e.target.value)}
+                className="w-0 border-none outline-none m-0 p-0 rounded-r-md transition-all text-black focus:p-1 focus:w-[100px]"
+              />
+            </div>
+            <NavbarButton extClass=" !hidden md:!flex">
+              <p className="absolute translate-x-1.5 -translate-y-1 w-[12px] h-[12px] text-center bg-text-color-tertiary rounded-full text-[7px]">
+                {Math.floor(Math.random() * 10)}
+              </p>
+              <VscBellDot />
+            </NavbarButton>
+            <NavbarButton extClass=" !hidden md:!flex">
+              <VscSettingsGear />
+            </NavbarButton>
+            <NavbarButton>
+              <VscSignOut />
+            </NavbarButton>
+          </>
+        )}
       </header>
       <div className="flex w-full h-screen">
         <div
