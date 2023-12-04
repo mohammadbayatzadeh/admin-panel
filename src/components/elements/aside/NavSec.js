@@ -3,6 +3,8 @@ import AsideItem from "./AsideItem";
 
 //icons
 import { VscHome, VscMap, VscAccount, VscPackage } from "react-icons/vsc";
+import { AiOutlineLogin } from "react-icons/ai";
+import { RiRegisteredLine } from "react-icons/ri";
 
 function NavSec() {
   return (
@@ -16,8 +18,13 @@ function NavSec() {
           icon={<VscPackage />}
           href="/manage-items"
         />
-
         <AsideItem title="Contact Me" icon={<VscAccount />} href="/contact" />
+        <AsideItem title="Sign In" icon={<AiOutlineLogin />} href="/login" />
+        <AsideItem
+          title="Sing Up"
+          icon={<RiRegisteredLine />}
+          href="/register"
+        />
       </ul>
     </div>
   );

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 //elements
+import NavbarItem from "../elements/NavbarItem";
 import AppSec from "../elements/aside/AppSec";
 import NavSec from "../elements/aside/NavSec";
 import UISec from "../elements/aside/UISec";
@@ -68,13 +69,13 @@ function Layout({ children }) {
         </span>
         {pathname !== "/login" && pathname !== "/register" && (
           <>
-            <NavbarButton href="/contact">
+            <NavbarItem href="/contact">
               <img
                 src={require(`../../data/users/profile.jpeg`)}
                 alt={"profile"}
                 className="w-full h-full rounded-lg"
               />
-            </NavbarButton>
+            </NavbarItem>
             <div
               className="h-[30px] w-fit flex border-2 border-solid border-text-color-secondary rounded-lg ml-1"
               onClick={() => searchHandler()}
@@ -88,18 +89,18 @@ function Layout({ children }) {
                 className="w-0 border-none outline-none m-0 p-0 rounded-r-md transition-all text-black focus:p-1 focus:w-[100px]"
               />
             </div>
-            <NavbarButton extClass=" !hidden md:!flex">
+            <NavbarItem extClass=" !hidden md:!flex">
               <p className="absolute translate-x-1.5 -translate-y-1 w-[12px] h-[12px] text-center bg-text-color-tertiary rounded-full text-[7px]">
                 {Math.floor(Math.random() * 10)}
               </p>
               <VscBellDot />
-            </NavbarButton>
-            <NavbarButton extClass=" !hidden md:!flex">
+            </NavbarItem>
+            <NavbarItem extClass=" !hidden md:!flex">
               <VscSettingsGear />
-            </NavbarButton>
-            <NavbarButton>
+            </NavbarItem>
+            <NavbarItem>
               <VscSignOut />
-            </NavbarButton>
+            </NavbarItem>
           </>
         )}
       </header>
@@ -152,21 +153,4 @@ function Layout({ children }) {
 
 export default Layout;
 
-const NavbarButton = ({ href = false, children, extClass }) => {
-  if (href)
-    return (
-      <Link
-        className={`flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary ${extClass}`}
-        to={href}
-      >
-        {children}
-      </Link>
-    );
-  return (
-    <div
-      className={`flex justify-center items-center w-[30px] h-[30px] text-text-color-secondary rounded-lg ml-1 cursor-pointer border-2 border-solid border-text-color-secondary ${extClass}`}
-    >
-      {children}
-    </div>
-  );
-};
+

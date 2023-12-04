@@ -18,8 +18,9 @@ function AsideItem({ title, list = [], icon, href = "#" }) {
         className="flex items-start z-1 py-1 rounded-l-md text-text-color-primary no-underline transition-all "
       >
         <span
-          className={
-            title === "Animations" || title === "Icons" ? "animate-spin" : null
+          className={`translate-y-0.5
+         ${ title === "Animations" || title === "Icons" ? "animate-spin" : null}
+          `
           }
         >
           {icon}
