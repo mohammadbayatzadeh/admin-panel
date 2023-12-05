@@ -1,6 +1,7 @@
 const { render, screen, fireEvent } = require("@testing-library/react");
 import { BrowserRouter } from "react-router-dom";
 import LoginPage from "./LoginPage";
+import { helper } from "../../../utils/functions";
 
 const getElement = (elm) => {
   const elms = {
@@ -43,5 +44,12 @@ describe("loginPage input, button check", () => {
     typeElement("salam", "email");
     typeElement("123456", "password");
     expect(getElement("button").disabled).toBeFalsy();
+  });
+
+  test("check the usEmpty calling", () => {
+    //spyOn
+    const isEmpty = jest.spyOn(helper, "isEmpty");
+    helper.isEmpty(getElement("email").value);
+    expect(isEmpty).toHaveBeenCalledTimes(1);
   });
 });

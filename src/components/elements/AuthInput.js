@@ -1,7 +1,7 @@
 function AuthInput({ name, form, placeholder, setForm }) {
   const changeHandler = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm({ ...form, [name]: value.trim() });
   };
   return (
     <div>

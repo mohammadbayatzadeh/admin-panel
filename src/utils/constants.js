@@ -1,4 +1,6 @@
 export const ERR_MSG = {
+  PASSWORD: "your password must be more than 7 characters",
   EMAIL: "enter invalid email",
-  PASSWORD: "your password must be more than characters",
+  E_EMAIL: "email is required",
+  E_PASSWORD: "password is required",
 };

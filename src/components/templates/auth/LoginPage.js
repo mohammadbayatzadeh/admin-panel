@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //elements
 import AuthInput from "../../elements/AuthInput";
 import { helper } from "../../../utils/functions";
+import { ERR_MSG } from "../../../utils/constants";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -11,9 +12,19 @@ function LoginPage() {
     password: "",
   });
 
+  const [error, setError] = useState("");
+
   const submitHandler = (e) => {
-    console.log(form);
     e.preventDefault();
+    console.log(helper.checkEmail(form.email));
+    if (!helper.checkEmail(form.email)) {
+      setError(ERR_MSG.EMAIL);
+    } else if (helper.isEmpty(ERR_MSG.PASSWORD)) {
+      setError(ERR_MSG.PASSWORD);
+    } else {
+      setError("");
+      console.log(form);
+    }
   };
 
   return (
@@ -59,6 +70,7 @@ function LoginPage() {
                 Forgot password?
               </Link>
             </div>
+            {error ?? <p></p>}
             <button
               type="submit"
               disabled={
