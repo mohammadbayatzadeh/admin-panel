@@ -15,6 +15,6 @@ export const helper = {
   },
 
   checkEmail: (email) => {
-    return email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
+    return email.match(/[a-zA-Z]+[a-zA-Z0-9/./-/_]{3}@[a-z]{3,10}.[a-z]/);
   },
 };

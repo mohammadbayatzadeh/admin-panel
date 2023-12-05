@@ -16,10 +16,9 @@ function LoginPage() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(helper.checkEmail(form.email));
     if (!helper.checkEmail(form.email)) {
       setError(ERR_MSG.EMAIL);
-    } else if (helper.isEmpty(ERR_MSG.PASSWORD)) {
+    } else if (form.password.length < 7) {
       setError(ERR_MSG.PASSWORD);
     } else {
       setError("");
@@ -28,10 +27,10 @@ function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center mx-auto">
-      <div className="w-full bg-text-color-secondary rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
-        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl ">
+    <div className=" w-full flex items-center justify-center">
+      <div className="w-full max-w-[500px] bg-text-color-secondary rounded-lg shadow md:mt-0 xl:p-0 ">
+        <div className="w-full p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl">
             Sign in to your account
           </h1>
           <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
@@ -70,7 +69,11 @@ function LoginPage() {
                 Forgot password?
               </Link>
             </div>
-            {error ?? <p></p>}
+            {error && (
+              <p className="w-full text-center text-white bg-text-color-tertiary rounded p-2">
+                {error}
+              </p>
+            )}
             <button
               type="submit"
               disabled={
