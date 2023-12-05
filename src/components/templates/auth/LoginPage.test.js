@@ -1,7 +1,9 @@
-const { render, screen, fireEvent } = require("@testing-library/react");
+const { render, screen, fireEvent, act } = require("@testing-library/react");
+import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import { helper } from "../../../utils/functions";
+import { ERR_MSG } from "../../../utils/constants";
 
 const getElement = (elm) => {
   const elms = {
@@ -16,15 +18,14 @@ const typeElement = (value, elm) => {
   fireEvent.change(getElement(elm), { target: { value } });
 };
 
+beforeEach(() =>
+  render(
+    <BrowserRouter>
+      <LoginPage />
+    </BrowserRouter>
+  )
+);
 describe("loginPage input, button check", () => {
-  beforeEach(() =>
-    render(
-      <BrowserRouter>
-        <LoginPage />
-      </BrowserRouter>
-    )
-  );
-
   test("inputs must initialy empty", () => {
     expect(getElement("email").value).toBe("");
     expect(getElement("password").value).toBe("");
@@ -51,5 +52,28 @@ describe("loginPage input, button check", () => {
     const isEmpty = jest.spyOn(helper, "isEmpty");
     helper.isEmpty(getElement("email").value);
     expect(isEmpty).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("error handling tests", () => {
+  beforeEach(() => {
+    expect(screen.queryByText(ERR_MSG.EMAIL)).not.toBeInTheDocument();
+    expect(screen.queryByText(ERR_MSG.PASSWORD)).not.toBeInTheDocument();
+  });
+  test("email error handling", () => {
+    typeElement("salam", "email");
+    typeElement("12345678", "password");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(screen.queryByText(ERR_MSG.EMAIL)).toBeInTheDocument();
+  });
+  test("password error handling", () => {
+    typeElement("salam@gmail.com", "email");
+    typeElement("1234", "password");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(screen.queryByText(ERR_MSG.PASSWORD)).toBeInTheDocument();
   });
 });
