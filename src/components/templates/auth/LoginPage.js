@@ -29,11 +29,16 @@ function LoginPage() {
   return (
     <div className=" w-full flex items-center justify-center">
       <div className="w-full max-w-[500px] bg-text-color-secondary rounded-lg shadow md:mt-0 xl:p-0 ">
-        <div className="w-full p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div className="w-full p-6 space-y-4 md:space-y-6 sm:p-8 ">
           <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl">
             Sign in to your account
           </h1>
-          <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
+          <form className="space-y-4 md:space-y-6 " onSubmit={submitHandler}>
+            {error && (
+              <p className="w-full text-center text-white bg-text-color-tertiary rounded">
+                {error}
+              </p>
+            )}
             <AuthInput
               name="email"
               form={form}
@@ -69,11 +74,6 @@ function LoginPage() {
                 Forgot password?
               </Link>
             </div>
-            {error && (
-              <p className="w-full text-center text-white bg-text-color-tertiary rounded p-2">
-                {error}
-              </p>
-            )}
             <button
               type="submit"
               disabled={
