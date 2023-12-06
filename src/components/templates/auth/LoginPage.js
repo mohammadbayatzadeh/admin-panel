@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //elements
 import AuthInput from "../../elements/AuthInput";
@@ -7,6 +8,7 @@ import { helper } from "../../../utils/functions";
 import { ERR_MSG } from "../../../utils/constants";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -23,6 +25,7 @@ function LoginPage() {
     } else {
       setError("");
       console.log(form);
+      navigate("/");
     }
   };
 
@@ -79,7 +82,7 @@ function LoginPage() {
               disabled={
                 helper.isEmpty(form.email) || helper.isEmpty(form.password)
               }
-              className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:!opacity-100 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:!opacity-100 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:opacity-30  "
             >
               Sign in
             </button>
