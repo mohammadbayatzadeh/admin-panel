@@ -57,7 +57,10 @@ function RegisterPage() {
 
             <button
               type="submit"
-              className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:!opacity-100  focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              disabled={
+                helper.isEmpty(form.email) || helper.isEmpty(form.password)
+              }
+              className="w-full text-text-color-secondary bg-bg-color-primary transition-all duration-500 opacity-80 hover:opacity-100 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:opacity-30  "
             >
               Sign up
             </button>
