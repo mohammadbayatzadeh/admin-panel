@@ -1,58 +1,59 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+//elements
+import AuthInput from "../../elements/AuthInput";
+import { helper } from "../../../utils/functions";
+import { ERR_MSG } from "../../../utils/constants";
 
 function RegisterPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  const changeHandler = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+
+  const [error, setError] = useState("");
+
   const submitHandler = (e) => {
     e.preventDefault();
+    if (!helper.checkEmail(form.email)) {
+      setError(ERR_MSG.EMAIL);
+    } else if (form.password.length < 7) {
+      setError(ERR_MSG.PASSWORD);
+    } else {
+      setError("");
+      console.log(form);
+      navigate("/");
+    }
   };
+
   return (
-    <div className="flex flex-col justify-center mx-auto">
-      <div className="w-full bg-text-color-secondary rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
-        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl ">
+    <div className=" w-full flex items-center justify-center">
+      <div className="w-full max-w-[500px] bg-text-color-secondary rounded-lg shadow md:mt-0 xl:p-0">
+        <div className="w-full p-6 space-y-4 md:space-y-6 sm:p-8 ">
+          <h1 className="text-xl font-bold text-bg-color-primary md:text-2xl">
             Sign up your account
           </h1>
           <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
-            <div>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-bg-color-primary "
-              >
-                Your email
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={changeHandler}
-                className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
-                placeholder="name@company.com"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium text-bg-color-primary "
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                value={form.password}
-                onChange={changeHandler}
-                placeholder="••••••••"
-                className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:border-text-bg-color-primary w-full p-2.5 "
-              />
-            </div>
+            {error && (
+              <p className="w-full text-center text-white bg-text-color-tertiary rounded">
+                {error}
+              </p>
+            )}
+            <AuthInput
+              name="email"
+              form={form}
+              setForm={setForm}
+              placeholder="name@company.com"
+            />
+            <AuthInput
+              name="password"
+              form={form}
+              setForm={setForm}
+              placeholder="••••••••"
+            />
 
             <button
               type="submit"
