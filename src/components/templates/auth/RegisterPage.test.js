@@ -18,6 +18,13 @@ const typeElement = (value, elm) => {
   fireEvent.change(getElement(elm), { target: { value } });
 };
 
+//mocking naviagation
+const mockNavigation = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigation,
+}));
+
 beforeEach(() =>
   render(
     <BrowserRouter>
@@ -69,4 +76,13 @@ describe("error handling check", () => {
   });
 });
 
-describe('navigation testing')
+describe("navigation testing", () => {
+  test("navigating after filling valid inputs ", () => {
+    typeElement("salam@gmail.com", "email");
+    typeElement("12328465e", "password");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(mockNavigation).toHaveBeenCalledWith("/");
+  });
+});
