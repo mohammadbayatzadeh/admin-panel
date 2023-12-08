@@ -12,7 +12,7 @@ describe("checking helper functions", () => {
 
   test("testing checkEmail", () => {
     const testCase1 = "test";
-    const testCase2 = " test.com";
+    const testCase2 = "test.com";
     const testCase3 = "@gmail.com";
     const testCase4 = "test@gmail.com";
     const testCase5 = "test@com";
@@ -21,5 +21,11 @@ describe("checking helper functions", () => {
     expect(helper.checkEmail(testCase3)).toBeFalsy();
     expect(helper.checkEmail(testCase4)).toBeTruthy();
     expect(helper.checkEmail(testCase5)).toBeFalsy();
+  });
+  test("checking seprate price", () => {
+    const testCase1 = "25.5";
+    const testCase2 = "25";
+    expect(typeof helper.seperatePrice(testCase1)).toBe("object");
+    expect(typeof helper.seperatePrice(testCase2)).toBe("object");
   });
 });
