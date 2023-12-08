@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 //elements
 import AuthInput from "../../elements/AuthInput";
+
+//functions
 import { helper } from "../../../utils/functions";
+
+//constants
 import { ERR_MSG } from "../../../utils/constants";
 
 function LoginPage() {
