@@ -25,7 +25,7 @@ describe("checking helper functions", () => {
   test("checking seprate price", () => {
     const testCase1 = "25.5";
     const testCase2 = "25";
-    expect(typeof helper.seperatePrice(testCase1)).toBe("object");
-    expect(typeof helper.seperatePrice(testCase2)).toBe("object");
+    expect(helper.seperatePrice(testCase1)).toStrictEqual(["25", "5"]);
+    expect(helper.seperatePrice(testCase2)).toStrictEqual(["25"]);
   });
 });
