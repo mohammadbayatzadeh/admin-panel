@@ -10,9 +10,9 @@ module.exports = {
   // coverageDirectory: "coverage",
   // moduleDirectories: ["node_modules"],
   testEnvironment: "jest-environment-jsdom",
-  // transform: {
-  //   "\\.[jt]sx?$": "esbuild-jest",
-  // },
+  transform: {
+    "\\.[jt]sx?$": "esbuild-jest",
+  },
   transformIgnorePatterns: ["node_modules/(?!(spacetime)/)"],
 
   // collectCoverageFrom: undefined,
