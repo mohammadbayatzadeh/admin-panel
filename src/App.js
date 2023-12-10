@@ -11,13 +11,13 @@ import { Provider } from "react-redux";
 
 function App() {
   return (
-    <Provider store={Store}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={Store}>
         <Layout>
           <RoutesMap />
         </Layout>
-      </BrowserRouter>
-    </Provider>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

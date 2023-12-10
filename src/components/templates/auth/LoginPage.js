@@ -28,7 +28,6 @@ function LoginPage() {
       setError(ERR_MSG.PASSWORD);
     } else {
       setError("");
-      console.log(form);
       navigate("/");
     }
   };

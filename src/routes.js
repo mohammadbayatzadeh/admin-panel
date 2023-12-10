@@ -14,7 +14,9 @@ const ManageItems = lazy(() =>
   import("./components/templates/pages/ManageItems")
 );
 const LoginPage = lazy(() => import("./components/templates/auth/LoginPage"));
-const RegisterPage = lazy(() => import("./components/templates/auth/RegisterPage"));
+const RegisterPage = lazy(() =>
+  import("./components/templates/auth/RegisterPage")
+);
 const Page404 = lazy(() => import("./components/templates/Page404"));
 
 function RoutesMap() {
