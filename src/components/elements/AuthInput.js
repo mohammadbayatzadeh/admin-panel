@@ -1,3 +1,5 @@
+import React from "react";
+
 function AuthInput({ name, form, placeholder, setForm }) {
   const changeHandler = (e) => {
     const { name, value } = e.target;

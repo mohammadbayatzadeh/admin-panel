@@ -9,9 +9,11 @@ module.exports = {
   // collectCoverage: true,
   // coverageDirectory: "coverage",
   // moduleDirectories: ["node_modules"],
+  preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
   transform: {
-    "\\.[jt]sx?$": "esbuild-jest",
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
   },
   transformIgnorePatterns: ["node_modules/(?!(spacetime)/)"],
 
@@ -68,8 +70,6 @@ module.exports = {
   // notify: false,
 
   // notifyMode: "failure-change",
-
-  // preset: undefined,
 
   // projects: undefined,
 

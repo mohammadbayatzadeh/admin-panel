@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 import "@testing-library/jest-dom";

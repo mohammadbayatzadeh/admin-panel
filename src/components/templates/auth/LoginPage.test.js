@@ -1,9 +1,10 @@
-const { render, screen, fireEvent, act } = require("@testing-library/react");
+import React from "react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import { helper } from "../../../utils/functions";
 import { ERR_MSG } from "../../../utils/constants";
+const { render, screen, fireEvent, act } = require("@testing-library/react");
 
 const getElement = (elm) => {
   const elms = {

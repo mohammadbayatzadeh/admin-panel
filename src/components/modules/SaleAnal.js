@@ -1,3 +1,5 @@
+import React from "react";
+
 //charts
 import LineChart from "../elements/charts/lineChart";
 import CircleChart from "../elements/charts/circleChart";

@@ -1,3 +1,5 @@
+import React from "react";
+
 //comps
 import AsideItem from "./AsideItem";
 
