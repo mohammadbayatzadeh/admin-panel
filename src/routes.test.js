@@ -15,17 +15,17 @@ import { BrowserRouter, MemoryRouter } from "react-router-dom";
 describe("check routes render successfully", () => {
   test("full app rendering/navigating", async () => {
     const route = "/contact";
-    // await act(() =>
-    //   render(
-    //     // <Suspense fallback="test loading ">
-    //     <MemoryRouter initialEntries={[route]}>
-    //       <RoutesMap />
-    //     </MemoryRouter>
-    //     // </Suspense>
-    //   )
-    // );
-    // await waitFor(() =>
-    //   expect(screen.findByText("Information")).toBeInTheDocument()
-    // );
+    await act(() =>
+      render(
+        <Suspense fallback="test loading">
+        <MemoryRouter initialEntries={[route]}>
+          <RoutesMap />
+        </MemoryRouter>
+        </Suspense>
+      )
+    );
+    await waitFor(() =>
+      expect(screen.findByText("Information")).toBeInTheDocument()
+    );
   });
 });
