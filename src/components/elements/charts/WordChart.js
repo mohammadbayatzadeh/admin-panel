@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5wc from "@amcharts/amcharts5/wc";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
@@ -18,9 +19,9 @@ function WordChart() {
         maxFontSize: am5.percent(15),
       })
     );
-
     series.labels.template.setAll({
       fontFamily: "Courier New",
+      fill: am5.color(0xfffffff),
     });
 
     setInterval(function () {
