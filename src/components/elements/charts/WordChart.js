@@ -1,5 +1,4 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5wc from "@amcharts/amcharts5/wc";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
@@ -7,6 +6,17 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import { useLayoutEffect } from "react";
 
 function WordChart() {
+  const [mode, setMode] = useState("light");
+  const storedMode = localStorage.getItem("mode");
+
+  if (storedMode == null) {
+    localStorage.setItem("mode", "light");
+    setMode("light");
+  }
+  useEffect(() => {
+    setMode(storedMode);
+  }, [storedMode]);
+
   useLayoutEffect(() => {
     let root = am5.Root.new("word");
 
@@ -21,7 +31,7 @@ function WordChart() {
     );
     series.labels.template.setAll({
       fontFamily: "Courier New",
-      fill: am5.color(0xfffffff),
+      fill: mode === "light" ? am5.color(0x000000) : am5.color(0xfffffff),
     });
 
     setInterval(function () {
